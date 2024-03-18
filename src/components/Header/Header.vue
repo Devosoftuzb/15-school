@@ -12,7 +12,8 @@
                     </select> -->
                 </div>
                 <div class="header-top-weather">
-                <a  target="_blank" href="https://nochi.com/weather/tashkent-12205"><img src="https://w.bookcdn.com/weather/picture/21_12205_1_20_f1c411_250_f39c13_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=70241&domid=589&anc_id=10477"  alt="booked.net"/></a>
+                <!-- <a  target="_blank" href="https://nochi.com/weather/tashkent-12205"><img src="https://w.bookcdn.com/weather/picture/21_12205_1_20_f1c411_250_f39c13_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=70241&domid=589&anc_id=10477"  alt="booked.net"/></a> -->
+                <!-- <div class="elfsight-app-42d68e90-2709-4d91-b7ff-b0b8832676fe" data-elfsight-app-lazy></div> -->
                 <div>
                     <a class="telegram" target="_blank" href="!#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none"><g clip-path="url(#akarIconsTelegramFill0)"><path fill="currentColor" fill-rule="evenodd" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12S5.373 0 12 0s12 5.373 12 12M12.43 8.859c-1.167.485-3.5 1.49-6.998 3.014c-.568.226-.866.447-.893.663c-.046.366.412.51 1.034.705c.085.027.173.054.263.084c.613.199 1.437.432 1.865.441c.389.008.823-.152 1.302-.48c3.268-2.207 4.955-3.322 5.061-3.346c.075-.017.179-.039.249.024c.07.062.063.18.056.212c-.046.193-1.84 1.862-2.77 2.726c-.29.269-.495.46-.537.504c-.094.097-.19.19-.282.279c-.57.548-.996.96.024 1.632c.49.323.882.59 1.273.856c.427.291.853.581 1.405.943c.14.092.274.187.405.28c.497.355.944.673 1.496.623c.32-.03.652-.331.82-1.23c.397-2.126 1.179-6.73 1.36-8.628a2.111 2.111 0 0 0-.02-.472a.506.506 0 0 0-.172-.325c-.143-.117-.365-.142-.465-.14c-.451.008-1.143.249-4.476 1.635" clip-rule="evenodd"/></g><defs><clipPath id="akarIconsTelegramFill0"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs></g></svg></a>
                         <a class="instagram" target="_blank" href="!#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg></a>
@@ -95,6 +96,7 @@
         modal.classList.toggle('db');
         
     }
+    
 </script>
 
 <style lang="css" scoped>
@@ -121,15 +123,30 @@
     }
     .header-top-weather div{
         padding: 5px 14px;
-        background-color: #4776B3;
         display: flex;
         align-items: center;
-        gap: 3px;
+        gap: 10px;
     }
     .header-top-weather svg{
         font-size: 25px;
-        color: white;
+        color: black;
     }
+    .footer-icon a{
+    font-size: 30px;
+    color: white;
+}
+.telegram:hover path{
+    fill: rgb(44, 122, 248);
+}
+.facebook:hover path{
+    fill: rgb(44, 122, 248);
+}
+.twiter:hover path{
+    fill: rgb(44, 122, 248);
+}
+.instagram:hover path{
+    fill: #8134AF;
+}
     .header-top-weather a{
         margin-bottom: 0;
     }

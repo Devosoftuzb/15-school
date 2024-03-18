@@ -3,9 +3,7 @@
         <div class="container">
             <div class="footer-wrapper">
                 <div class="footer-logo">
-                    <h1>
-                        Logo
-                    </h1>
+                    <img src="https://mpe.uz/front-end/assets_files/images/green-logo_uz.svg" alt="">
                 </div>
                 <div class="footer-manzil">
                     <h2>
@@ -57,9 +55,9 @@
 
 <style lang="css" scoped>
 footer{
-    margin-top: 100px;
+    /* margin-top: 100px; */
     padding-top: 50px;
-    background-color: #061E3F;
+    background-color: #009189;
     padding-bottom: 80px;
 }
 .footer-wrapper{

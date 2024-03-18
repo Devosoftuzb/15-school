@@ -1,69 +1,45 @@
 <template>
     <section class="hero">
-        <div class="hero-search">
-            <div>
-                <input placeholder="I`m looking for a " type="search" name="" id="header-serch">
-                <label for="header-serch"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"/></svg></label>
-            </div>
-        </div>
-        <div class="container">
+       <div class="container">
+        <div class="hero-content">
+            <h1>
+                Huquqiy Portla
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae minima 
+            </p>
+            <label>
+                <input id="search" type="text" placeholder="Izlash">
+                <svg for="search" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0"/></svg>
+            </label>
             <div class="hero-wrapper">
-                <div class="hero-content">
-                    <h1>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, fugiat.
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet.
-                    </p>
-                    <button>
-                        Start 
-                    </button>
+                <div class="hero-card">
+                    <h3>
+                        Saylov
+                    </h3>
                 </div>
-                <div class="hero-modal">
-                    <h1>
-                        Biz bilan boglaning
-                    </h1>
-                    <form action="">
-                        <label class="hero-number"for="number">
-                            Telefon raqamingiz
-                            <div>
-                                <span>+998</span><input id="number" maxlength="10"  type="number">
-                            </div>
-                        </label>
-                        <label class="hero-text" for="my-textarea">
-                            Savol
-                            <textarea id="my-textarea" rows="0" cols="0"></textarea>
-                        </label>
-                        <button class="hero-btn" type="submit">
-                            Jonatish
-                        </button>
-                    </form>
+                <div class="hero-card">
+                    <h3>
+                        Mehnat
+                    </h3>
+                </div>
+                <div class="hero-card">
+                    <h3>
+                        Transport
+                    </h3>
+                </div>
+                <div class="hero-card">
+                    <h3>
+                        Qishloq xo`jaligi
+                    </h3>
                 </div>
             </div>
         </div>
+       </div>
     </section>
-    <section class="Conditions">
-        <div class="container">
-            <div class="Conditions-wrapper">
-                <div class="Conditions-card">
-                    <div class="conditions-card-opacity"></div>
-                    <h2>
-                        Online service
-                    </h2>
-                </div>
-                <div class="Conditions-card">
-                    <div class="conditions-card-opacity"></div>
-                    <h2>
-                        Online service
-                    </h2>
-                </div>
-                <div class="Conditions-card">
-                    <div class="conditions-card-opacity"></div>
-                    <h2>
-                        Online service
-                    </h2>
-                </div>
-            </div>
+    <section>
+        <div class="">
+
         </div>
     </section>
     <section class="Teacher">
@@ -180,338 +156,120 @@
             </div>
         </div>
     </section>
-    <section class="user">
+    <section class="circle">
         <div class="container">
-            <h2>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ea veniam doloribus suscipit, inventore magnam dolor consequatur temporibus nihil fugiat totam eum atque mollitia voluptatem molestiae? Labore, accusamus! Distinctio, doloribus.
-            </h2>
-            <div class="user-wrapper">
-                <div class="user-card">
-                    <div>
-                        <img src="https://e-notarius.uz/static/img/enotarius.328c7ed7.png" alt="logo">
-                    <h3>
-                        Electron Natarius
-                    </h3>
-                    </div>
-                </div>
-                <div class="user-card">
-                    <div>
-                        <img src="https://bolahuquqlari.uz/static/assets/img/logo.svg" alt="logo">
-                    <h3>
-                        Bola Huquqlari
-                    </h3>
-                    </div>
-                </div>
-                <div class="user-card">
-                   <div>
-                    <img src="https://e-notarius.uz/static/img/enotarius.328c7ed7.png" alt="logo">
-                    <h3>
-                        Electron Natarius
-                    </h3>
-                   </div>
-                </div>
-                <div class="user-card">
-                    <div>
-                        <img src="https://bolahuquqlari.uz/static/assets/img/logo.svg" alt="logo">
-                    <h3>
-                        Bola Huquqlari
-                    </h3>
-                    </div>
-                </div>
+            <div class="circle-title">
+                <h1>
+                    Bepul Togaraklar
+                </h1>
             </div>
-        </div>
-    </section>
-    <section class="statistics">
-        <div class="container">
-            <div class="statistics-title">
-                <h2>
-                    Statistika 
-                </h2>
-                <div class="statistics-line">
-
-                </div>
-            </div>
-            <div class="statistics-wrapper">
-                <div class="statistics-card">
-                   <div>
-                    <div class="bg-svg">
-                        <svg class="st-svg1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M16.612 2.214a1.01 1.01 0 0 0-1.242 0L1 13.419l1.243 1.572L4 13.621V26a2.004 2.004 0 0 0 2 2h20a2.004 2.004 0 0 0 2-2V13.63L29.757 15L31 13.428ZM18 26h-4v-8h4Zm2 0v-8a2.002 2.002 0 0 0-2-2h-4a2.002 2.002 0 0 0-2 2v8H6V12.062l10-7.79l10 7.8V26Z"/></svg>
-                    </div>
+            <div class="circle-wrapper">
+                <div class="circle-card">
+                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
                     <h3>
-                        29.500
+                        Sog`liqni saqlash
                     </h3>
-                    <span>
-                        MTT soni
-                    </span>
-                   </div>
-                </div>
-                <div class="statistics-card">
-                   <div>
-                    <div class="bg-svg2">
-                        <svg class="st-svg2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2s4-2 4-2M9 9h.01M15 9h.01"/></g></svg>
+                    <div class="cricle-grid">
+                        <div>   
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                        </div>
+                        <span>
+                            2 soat 30 daqiqa
+                        </span>
                     </div>
+                </div>
+                <div class="circle-card">
+                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
                     <h3>
-                        29.500
+                        Sog`liqni saqlash
                     </h3>
-                    <span>
-                        MTT soni
-                    </span>
-                   </div>
-                </div>
-                <div class="statistics-card">
-                   <div>
-                    <div class="bg-svg3">
-                        <svg class="st-svg3" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M11 21v15.039c0 .607.274 1.18.785 1.509C13.486 38.643 17.86 41 24 41s10.514-2.357 12.215-3.452c.51-.33.785-.902.785-1.51V21"/><path stroke-linecap="round" d="M43 24v8M5 17L24 7l19 10l-19 10z"/></g></svg>
+                    <div class="cricle-grid">
+                        <div>   
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                        </div>
+                        <span>
+                            2 soat 30 daqiqa
+                        </span>
                     </div>
+                </div>
+                <div class="circle-card">
+                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
                     <h3>
-                        29.500
+                        Sog`liqni saqlash
                     </h3>
-                    <span>
-                        MTT soni
-                    </span>
-                   </div>
-                </div>
-                <div class="statistics-card">
-                   <div>
-                    <div class="bg-svg4">
-                        <svg class="st-svg4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4z"/></svg>
+                    <div class="cricle-grid">
+                        <div>   
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                        </div>
+                        <span>
+                            2 soat 30 daqiqa
+                        </span>
                     </div>
+                </div>
+                <div class="circle-card">
+                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
                     <h3>
-                        29.500
+                        Sog`liqni saqlash
                     </h3>
-                    <span>
-                        MTT soni
-                    </span>
-                   </div>
-                </div>
-                <div class="statistics-card">
-                   <div>
-                    <div class="bg-svg5">
-                        <svg class="st-svg5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1200 1200"><path fill="currentColor" d="M600 0c-65.168 0-115.356 54.372-115.356 119.385c0 62.619-.439 117.407-.439 117.407h-115.87c-2.181 0-4.291.241-6.372.586h-32.227v112.573h540.527V237.378h-32.227c-2.081-.345-4.191-.586-6.372-.586H715.796s1.318-49.596 1.318-117.041C717.114 57.131 665.168 0 600 0M175.195 114.185V1200h849.609V114.185H755.64v78.662h191.382v928.345h-693.97V192.847H444.36v-78.662zM600 115.649c21.35 0 38.599 17.18 38.599 38.452c0 21.311-17.249 38.525-38.599 38.525s-38.599-17.215-38.599-38.525c0-21.271 17.249-38.452 38.599-38.452M329.736 426.27v38.525h38.599V426.27zm115.869.732v38.525h424.658v-38.525zm-115.869 144.58v38.525h38.599v-38.525zm115.869.732v38.599h424.658v-38.599zM329.736 716.895v38.525h38.599v-38.525zm115.869.805v38.525h424.658V717.7zM329.736 862.28v38.525h38.599V862.28zm115.869.806v38.525h424.658v-38.525zm-115.869 144.507v38.525h38.599v-38.525zm115.869.805v38.525h424.658v-38.525z"/></svg>
+                    <div class="cricle-grid">
+                        <div>   
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                        </div>
+                        <span>
+                            2 soat 30 daqiqa
+                        </span>
                     </div>
+                </div>
+                <div class="circle-card">
+                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
                     <h3>
-                        29.500
+                        Sog`liqni saqlash
                     </h3>
-                    <span>
-                        MTT soni
-                    </span>
-                   </div>
-                </div>
-                <div class="statistics-card">
-                   <div>
-                    <div class="bg-svg6">
-                        <svg class="st-svg6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 16.92v3a2 2 0 0 1-2.18 2a19.79 19.79 0 0 1-8.63-3.07a19.5 19.5 0 0 1-6-6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72a12.84 12.84 0 0 0 .7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45a12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92"/></svg>
+                    <div class="cricle-grid">
+                        <div>   
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                        </div>
+                        <span>
+                            2 soat 30 daqiqa
+                        </span>
                     </div>
+                </div>
+                <div class="circle-card">
+                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
                     <h3>
-                        29.500
+                        Sog`liqni saqlash
                     </h3>
-                    <span>
-                        MTT soni
-                    </span>
-                   </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="vacancy">
-        <div class="container">
-            <div class="vacancy-wrapper">
-                <div class="vacancy-card">
-                    <div class="vacancy-card-title">
-                        <h1>
-                            Bosh ishlar orinlari
-                        </h1>
-                        <button>
-                            Barcha ish orinlari <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
-                        </button>
-                    </div>
-                    <div class="vacancy-card-main">
-                        <div class="vacancy-card-main-item">
-                            <div class="vacancy-grid">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7.25 5.461v1.42l-1.694.138a2.61 2.61 0 0 0-2.367 2.184c-.041.258-.08.516-.114.775a.298.298 0 0 0 .169.308l.077.036c5.429 2.57 11.93 2.57 17.358 0l.077-.036a.298.298 0 0 0 .168-.308a26.748 26.748 0 0 0-.113-.775a2.61 2.61 0 0 0-2.367-2.184l-1.694-.137v-1.42a1.75 1.75 0 0 0-1.49-1.731l-1.22-.183a13.75 13.75 0 0 0-4.08 0l-1.22.183a1.75 1.75 0 0 0-1.49 1.73m6.567-.43a12.25 12.25 0 0 0-3.634 0l-1.22.183a.25.25 0 0 0-.213.247v1.315a56.826 56.826 0 0 1 6.5 0V5.461a.25.25 0 0 0-.213-.247z" clip-rule="evenodd"/><path fill="currentColor" d="M21.118 12.07a.2.2 0 0 0-.282-.17c-5.571 2.467-12.101 2.467-17.672 0a.2.2 0 0 0-.282.17a26.88 26.88 0 0 0 .307 5.727a2.61 2.61 0 0 0 2.367 2.185l1.872.15c3.043.246 6.1.246 9.144 0l1.872-.15a2.61 2.61 0 0 0 2.367-2.185c.306-1.895.41-3.815.307-5.726"/></svg>
-                                <h4>
-                                    Etakchi mutaxassis
-                                </h4>
-                            </div>
-                            <div class="vacancy-money">
-                                <span>
-                                    Ish haqi
-                                </span>
-                                <h3>
-                                    980000
-                                </h3>
-                                <span>som</span>
-                            </div>
+                    <div class="cricle-grid">
+                        <div>   
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
                         </div>
-                        <div class="vacancy-card-main-item">
-                            <div class="vacancy-grid">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7.25 5.461v1.42l-1.694.138a2.61 2.61 0 0 0-2.367 2.184c-.041.258-.08.516-.114.775a.298.298 0 0 0 .169.308l.077.036c5.429 2.57 11.93 2.57 17.358 0l.077-.036a.298.298 0 0 0 .168-.308a26.748 26.748 0 0 0-.113-.775a2.61 2.61 0 0 0-2.367-2.184l-1.694-.137v-1.42a1.75 1.75 0 0 0-1.49-1.731l-1.22-.183a13.75 13.75 0 0 0-4.08 0l-1.22.183a1.75 1.75 0 0 0-1.49 1.73m6.567-.43a12.25 12.25 0 0 0-3.634 0l-1.22.183a.25.25 0 0 0-.213.247v1.315a56.826 56.826 0 0 1 6.5 0V5.461a.25.25 0 0 0-.213-.247z" clip-rule="evenodd"/><path fill="currentColor" d="M21.118 12.07a.2.2 0 0 0-.282-.17c-5.571 2.467-12.101 2.467-17.672 0a.2.2 0 0 0-.282.17a26.88 26.88 0 0 0 .307 5.727a2.61 2.61 0 0 0 2.367 2.185l1.872.15c3.043.246 6.1.246 9.144 0l1.872-.15a2.61 2.61 0 0 0 2.367-2.185c.306-1.895.41-3.815.307-5.726"/></svg>
-                                <h4>
-                                    Etakchi mutaxassis
-                                </h4>
-                            </div>
-                            <div class="vacancy-money">
-                                <span>
-                                    Ish haqi
-                                </span>
-                                <h3>
-                                    980000
-                                </h3>
-                                <span>som</span>
-                            </div>
-                        </div>
-                        <div class="vacancy-card-main-item">
-                            <div class="vacancy-grid">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7.25 5.461v1.42l-1.694.138a2.61 2.61 0 0 0-2.367 2.184c-.041.258-.08.516-.114.775a.298.298 0 0 0 .169.308l.077.036c5.429 2.57 11.93 2.57 17.358 0l.077-.036a.298.298 0 0 0 .168-.308a26.748 26.748 0 0 0-.113-.775a2.61 2.61 0 0 0-2.367-2.184l-1.694-.137v-1.42a1.75 1.75 0 0 0-1.49-1.731l-1.22-.183a13.75 13.75 0 0 0-4.08 0l-1.22.183a1.75 1.75 0 0 0-1.49 1.73m6.567-.43a12.25 12.25 0 0 0-3.634 0l-1.22.183a.25.25 0 0 0-.213.247v1.315a56.826 56.826 0 0 1 6.5 0V5.461a.25.25 0 0 0-.213-.247z" clip-rule="evenodd"/><path fill="currentColor" d="M21.118 12.07a.2.2 0 0 0-.282-.17c-5.571 2.467-12.101 2.467-17.672 0a.2.2 0 0 0-.282.17a26.88 26.88 0 0 0 .307 5.727a2.61 2.61 0 0 0 2.367 2.185l1.872.15c3.043.246 6.1.246 9.144 0l1.872-.15a2.61 2.61 0 0 0 2.367-2.185c.306-1.895.41-3.815.307-5.726"/></svg>
-                                <h4>
-                                    Etakchi mutaxassis
-                                </h4>
-                            </div>
-                            <div class="vacancy-money">
-                                <span>
-                                    Ish haqi
-                                </span>
-                                <h3>
-                                    980000
-                                </h3>
-                                <span>som</span>
-                            </div>
-                        </div>
-                        <div class="vacancy-card-main-item">
-                            <div class="vacancy-grid">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7.25 5.461v1.42l-1.694.138a2.61 2.61 0 0 0-2.367 2.184c-.041.258-.08.516-.114.775a.298.298 0 0 0 .169.308l.077.036c5.429 2.57 11.93 2.57 17.358 0l.077-.036a.298.298 0 0 0 .168-.308a26.748 26.748 0 0 0-.113-.775a2.61 2.61 0 0 0-2.367-2.184l-1.694-.137v-1.42a1.75 1.75 0 0 0-1.49-1.731l-1.22-.183a13.75 13.75 0 0 0-4.08 0l-1.22.183a1.75 1.75 0 0 0-1.49 1.73m6.567-.43a12.25 12.25 0 0 0-3.634 0l-1.22.183a.25.25 0 0 0-.213.247v1.315a56.826 56.826 0 0 1 6.5 0V5.461a.25.25 0 0 0-.213-.247z" clip-rule="evenodd"/><path fill="currentColor" d="M21.118 12.07a.2.2 0 0 0-.282-.17c-5.571 2.467-12.101 2.467-17.672 0a.2.2 0 0 0-.282.17a26.88 26.88 0 0 0 .307 5.727a2.61 2.61 0 0 0 2.367 2.185l1.872.15c3.043.246 6.1.246 9.144 0l1.872-.15a2.61 2.61 0 0 0 2.367-2.185c.306-1.895.41-3.815.307-5.726"/></svg>
-                                <h4>
-                                    Etakchi mutaxassis
-                                </h4>
-                            </div>
-                            <div class="vacancy-money">
-                                <span>
-                                    Ish haqi
-                                </span>
-                                <h3>
-                                    980000
-                                </h3>
-                                <span>som</span>
-                            </div>
-                        </div>
-                        <div class="vacancy-card-main-item">
-                            <div class="vacancy-grid">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7.25 5.461v1.42l-1.694.138a2.61 2.61 0 0 0-2.367 2.184c-.041.258-.08.516-.114.775a.298.298 0 0 0 .169.308l.077.036c5.429 2.57 11.93 2.57 17.358 0l.077-.036a.298.298 0 0 0 .168-.308a26.748 26.748 0 0 0-.113-.775a2.61 2.61 0 0 0-2.367-2.184l-1.694-.137v-1.42a1.75 1.75 0 0 0-1.49-1.731l-1.22-.183a13.75 13.75 0 0 0-4.08 0l-1.22.183a1.75 1.75 0 0 0-1.49 1.73m6.567-.43a12.25 12.25 0 0 0-3.634 0l-1.22.183a.25.25 0 0 0-.213.247v1.315a56.826 56.826 0 0 1 6.5 0V5.461a.25.25 0 0 0-.213-.247z" clip-rule="evenodd"/><path fill="currentColor" d="M21.118 12.07a.2.2 0 0 0-.282-.17c-5.571 2.467-12.101 2.467-17.672 0a.2.2 0 0 0-.282.17a26.88 26.88 0 0 0 .307 5.727a2.61 2.61 0 0 0 2.367 2.185l1.872.15c3.043.246 6.1.246 9.144 0l1.872-.15a2.61 2.61 0 0 0 2.367-2.185c.306-1.895.41-3.815.307-5.726"/></svg>
-                                <h4>
-                                    Etakchi mutaxassis
-                                </h4>
-                            </div>
-                            <div class="vacancy-money">
-                                <span>
-                                    Ish haqi
-                                </span>
-                                <h3>
-                                    980000
-                                </h3>
-                                <span>som</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="vacancy-card">
-                    <div class="vacancy-card-title">
-                        <h1>
-                            Hujjatlar
-                        </h1>
-                        <button>
-                            Barcha hujjatlar <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
-                        </button>
-                    </div>
-                    <div class="vacancy-card-main">
-                       <div class="vacancy-card-main-item2">
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 384H576V128H192v768h640zm-26.496-64L640 154.496V320zM160 64h480l256 256v608a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V96a32 32 0 0 1 32-32m160 448h384v64H320zm0-192h160v64H320zm0 384h384v64H320z"/></svg>
-                            </div>
-                            <div class="vacancy-card-main-item-content">
-                                <span>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-                                </span>
-                                <h3>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto quidem deserunt inventore amet quod neque.
-                                </h3>
-                                <span>
-                                    28.2.2024
-                                </span>
-                            </div>
-                       </div>
-                       <div class="vacancy-card-main-item2">
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 384H576V128H192v768h640zm-26.496-64L640 154.496V320zM160 64h480l256 256v608a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V96a32 32 0 0 1 32-32m160 448h384v64H320zm0-192h160v64H320zm0 384h384v64H320z"/></svg>
-                            </div>
-                            <div class="vacancy-card-main-item-content">
-                                <span>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-                                </span>
-                                <h3>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto quidem deserunt inventore amet quod neque.
-                                </h3>
-                                <span>
-                                    28.2.2024
-                                </span>
-                            </div>
-                       </div>
-                       <div class="vacancy-card-main-item2">
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" d="M832 384H576V128H192v768h640zm-26.496-64L640 154.496V320zM160 64h480l256 256v608a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V96a32 32 0 0 1 32-32m160 448h384v64H320zm0-192h160v64H320zm0 384h384v64H320z"/></svg>
-                            </div>
-                            <div class="vacancy-card-main-item-content">
-                                <span>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed,
-                                </span>
-                                <h3>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto quidem deserunt inventore amet quod neque.
-                                </h3>
-                                <span>
-                                    28.2.2024
-                                </span>
-                            </div>
-                       </div>
-                    </div>
-                </div>
-                <div class="vacancy-card">
-                    <div class="vacancy-card-title">
-                        <h1>
-                            So`rovnomalar
-                        </h1>
-                        <button>
-                            Barcha so`rovnomalar <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
-                        </button>
-                    </div>
-                    <div class="vacancy-card-main3">
-                        <h3>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, asperiores!
-                        </h3>
-                        <div class="vacancy-card-grid3">
-                            <input type="radio" name="rr" id="">
-                            <h4>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </h4>
-                        </div>
-                        <div class="vacancy-card-grid3">
-                            <input type="radio" name="rr" id="">
-                            <h4>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </h4>
-                        </div>
-                        <div class="vacancy-card-grid3">
-                            <input type="radio" name="rr" id="">
-                            <h4>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </h4>
-                        </div>
-                        <div class="vacancy-card-btn">
-                            <button class="vacancy-btn1">
-                                Ovoz berish
-                            </button>
-                            <button class="vacancy-btn2">
-                                Natijalar
-                            </button>
-                        </div>
+                        <span>
+                            2 soat 30 daqiqa
+                        </span>
                     </div>
                 </div>
             </div>
@@ -604,6 +362,24 @@
             </div>
         </div>
     </section>
+    <section class="unions">
+        <div class="container">
+            <div class="unions-wrapper">
+                <div>
+                    <img src="https://advice.uz/static/assets/img/advice.svg" alt="foto">
+                </div>
+                <div>
+                    <img src="https://bolahuquqlari.uz/static/assets/img/logo.svg" alt="foto">
+                </div>
+                <div>
+                    <img src="https://api.logobank.uz/media/logos_preview/Adliya_vazirligi-01.png" alt="foto">
+                </div>
+                <div>
+                    <img src="https://tashkent.archive.uz/source/posts/ochiq%20malumotlar/ochiq-web.png" alt="foto">
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup>
@@ -637,314 +413,83 @@
 
 <style lang="css" scoped>
     .hero{
-        background-image: url("https://www.ms.gov/themes/msgov/images/main-MS-bg.png");
+        background-image: url("https://huquqiyportal.uz/_nuxt/img/slide.f00f149.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        padding-top: 100px;
-        position: relative;
-        padding-bottom: 300px;
+        padding-top: 230px;
+        padding-bottom: 230px;
     }
-    .hero-search{
-        /* animation: changeWidth 8s ease-in-out infinite; */
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(8px);
-        background-color: rgba(0, 0, 0, 0.225);
-        opacity: 1;
-        position: absolute;
-        top: 0;
+    .hero h1{
+        font-size: 60px;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .hero p{
+        font-size: 25px;
+        color: white;
+        width: 600px;
+        margin-bottom: 40px;
+    }
+    .hero input{
         width: 100%;
-        /* background-color: black; */
-        padding-top: 10px;
-        padding-bottom: 30px;
+        padding: 15px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+    .hero label{
+        display: block;
         display: flex;
         align-items: center;
         justify-content: center;
-        
+        width:  700px;
+        padding: 5px 0;
+        background-color: white;
+        padding-right: 15px;
+        border-radius: 10px;
     }
-    .hero-search div{
-        display: flex;
-        align-items: center;
-        gap: 2px;
-    }
-    input::-webkit-input-placeholder {
-  color: white;
-}
-    .hero-search input{
-        font-size: 20px;
-        color: white;
-        border: none;
-        outline: none;
-        width: 500px;
-        padding: 10px;
-        background-color: transparent;
-        border-bottom: 1px solid rgb(212, 212, 212);
-    }
-    .hero-search svg{
+    .hero label svg{
+        font-size: 25px;
         cursor: pointer;
-        color: aliceblue;
-        font-size: 50px;
+    }
+    .hero-card{
+        cursor: pointer;
+        padding: 8px 10px;
+        border: 2px solid #CEC1B9;
+        border-radius: 30px;
+    }
+    .hero-card h3{
+        color: white;
     }
     .hero-wrapper{
-        margin-top: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .hero-content h1{
-        color: white;
-        font-size: 50px;
-        width: 550px;
-    }
-    .hero-content p{
-        margin-top: 10px;
-        font-size: 20px;
-        font-weight: bold;
-        color: rgb(196, 196, 196);
-    }
-    .hero-content button{
-        width: 300px;
-        height: 30px;
-        border: 1px solid rgb(186, 186, 186);
-        background: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(3px);
-        border-radius: 30px;
-        color: white;
-        cursor: pointer;
-        margin-top: 30px;
-        transition: 0.5s;
-    }
-    .hero-content button:hover{
-        backdrop-filter: blur(0px);
-    }
-    .hero-modal{
-        width: 400px;
-        height: 400px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(8px);
-        background-color: rgba(0, 0, 0, 0.225);
-        border-radius: 30px;
-        padding: 20px;
-    }
-    .hero-modal h1{
-        text-align: center;
-        margin-bottom: 20px;
-        color: white;
-    }
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-     margin: 0;
-    }
-    .hero-number input{
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        outline: none;
-        border: 1px solid #043B87;
-        color: black;
-        display: block;
-        padding: 5px 20px;
-        padding-left: 2px;
-        font-size: 16px;
-        border-left: transparent;
-        width: 50%;
-        background-color: transparent;
-        color: white;
-    }
-    .hero-modal label{
-        cursor: pointer;
-       color: white;
-    }
-    .hero-modal label div{
-        display: flex;
-        align-items: center;
-    }
-    .hero-modal span{
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        padding: 5px 0;
-        padding-left: 5px;
-        border: 1px solid #043B87;
-        border-right: transparent;
-    }
-    .hero-number{
-        display: block;
-        margin-bottom: 20px;
-    }
-    textarea{
-        outline: none;
-        padding: 5px;
-        display: block;
-        resize: none;
-        width: 100%;
-        height: 160px;  
-        border: 1px solid #043B87;
-        background-color: transparent;
-        color: white;
-    }
-    .hero-btn{
-        cursor: pointer;
         margin-top: 20px;
-        border-radius: 30px;
-        color: white;
-        border: 1px solid #61A1FE;
-        background-color: #61A1FE;
-        padding: 5px 40px;
-    }
-    @media(max-width:1000px){
-        .hero-wrapper{
-            flex-direction: column;
-            gap: 50px;
-        }
-        .hero-content{
-            text-align: center;
-        }
-    }
-    @media(max-width:590px){
-        .hero-search input{
-            width: 300px;
-        }
-        .hero-search svg{
-            font-size: 30px;
-        }
-        .hero-content h1{
-            width: 100%;
-        }
-    }
-    @media(max-width:406px){
-        .hero-modal{
-            width: 100%;
-        }
-        .hero-content button{
-            width: 100%;
-        }
-        .hero-content h1{
-            font-size: 40px;
-        }   
-
-    }
-    @media(max-width:370px){
-        .hero-search input{
-            width: 100%;
-        }
-       
-    }
-    .Conditions {
-        width: 100%;
-        height: 150px;
-        position: relative;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .Conditions-wrapper{
-        position: absolute;
-        top: -140px;
         display: flex;
         align-items: center;
-        gap: 30px;
-        left: 13%;
+        justify-content: flex-start;
+        gap: 15px;
+        width: 40%;
     }
-    .Conditions-card{
-        position: relative;
-        cursor: pointer;
-        padding: 30px;
-        width: 450px;
-        height: 280px;
-        background-image: url('https://i.pinimg.com/564x/ef/be/7d/efbe7d9accb3ce8c7be9a582a5ca086f.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        
-    }
-    .Conditions-card h2{
-        color: white;
-        margin-top: 200px;
-        position: relative;
-        z-index: 1;
-    }
-     .conditions-card-opacity{
-        position: absolute;
-        
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(30, 29, 29, 0.567);
-        /* display: none; */
-    }
-    /* .Conditions-card:hover  .conditions-card-opacity {
-        display: block;
-    }
-    .Conditions-card:hover  .Conditions-card h3{
-        display: block;
-    }
-    .Conditions-card h3{
-        color: white;
-        display: none;
-    }  */
-   
-    @media(max-width:1700px){
-        .Conditions-wrapper{
-            left: 10%
+    @media(max-width:730px){
+        .hero label{
+            width: auto;
+        }
+        .hero p {
+            width:100%;
         }
     }
-    @media(max-width:1650px){
-        .Conditions-wrapper{
-            left: 6%
+    @media(max-width:430px){
+        .hero-wrapper{
+            width:100%;
+            flex-wrap: wrap;
+            gap:10px;
         }
     }
-    @media(max-width:1580px){
-        .Conditions-wrapper{
-            left: 3%
-        }
-    }
-    @media(max-width:1230px) {
-        .Conditions-wrapper{
-            left: 10%
-        }
-    }
-    @media(max-width:1440px){
-        .Conditions-card{
-            width: 300px;
-            height: 200px;
-        }
-        .Conditions-card h2{
-            margin-top: 120px;
-        }
-        .Conditions-wrapper{
-            left: 17%
-        }
-    }
-    @media(max-width:1180px) {
-        .Conditions-wrapper{
-            left: 20px;
-        }
-    }   
-    @media(max-width:1022px) {
-        .Conditions-wrapper{
-            left: 20px;
-        }
-    }   
-    @media(max-width:1000px){
-        .Conditions{
-            height: 100%;
-        }
-        .Conditions-wrapper{
-            width: 90%;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-        }
-        .Conditions-card{
-            width: 550px;
-            height: 280px;
-        }
-    }
-    @media(max-width:605px){
-        .Conditions-card{
-            width: 100%;
-        }
-    }
+
+
+
+
+
     .Teacher{
         background-color: #061E3F;
         padding-top: 20px;
@@ -1133,327 +678,113 @@
             gap: 20px;
         }
     }
-    .user{
-        padding-top: 80px;
-        padding-bottom: 50px;
-    }
-    .user h2{
-        color: #193F82;
-        font-size: 25px;
-        text-align: center;
-        margin-bottom: 80px;
-    }
-    .user-wrapper{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;   
-    }
-    .user-card{
-        cursor: pointer;
-        text-align: center;
-        /* border: 1px solid black; */
-        width: 350px;
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 1px 1px 10px 1px #193F82;
-    }
-    .user-card img{
-        width: 100px;
-    }
-    .user-card:hover{
-        box-shadow: 5px 5px 50px 5px #193F82;
-    }
-    @media(max-width:1630px){
-       .user-card{
-        width: 200px;
-        height: 150px;
-       }
-    }
-    @media(max-width:880px){
-        .user-wrapper{
-            flex-direction: column;
-            gap: 30px;
-        }
-        .user-card{
-        width: 450px;
-        height: 200px;
-       }
-    }
-    @media(max-width:480px){
-        .user h2{
-            font-size: 15px;
-        }
-        .user-card{
-        width: 100%;
-        height: 200px;
-       }
-    }
-    .statistics{
-        padding-top: 150px;
-        padding-bottom: 80px;
-    }
-    .statistics-title h2{
-        color: white;
-        background-color: #193F82;
-        padding: 10px 15px;
-        text-align: center;
-        width: 150px;
-        cursor: pointer;
-    }
-    .statistics-line{
-        width: 100%;
-        height: 2px;
-        background-color: #193F82;
-    }
-    .statistics-wrapper{
-        margin-top: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .statistics-card{
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        /* height: 150px; */
-        text-align: center;
-        padding: 20px;
+    .circle{
         background-color: #F9F9F9;
-        cursor: pointer;
+        margin-top: 80px;
     }
-    .bg-svg{
-        background-color: #DBF4F7;
-        padding: 15px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-    .st-svg1{
-        color:#02CFE8 ;
+    .circle-title h1{
         font-size: 40px;
     }
-    .statistics-card h3{
-        color: #625C77;
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-    .statistics-card span{
-        color: #95929E;
-    }
-    .bg-svg2{
-        background-color: #E4E2F7;
-        padding: 15px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-    .st-svg2{
-        color:#877DF1 ;
-        font-size: 40px;
-    }
-    .bg-svg3{
-        background-color: #F7E5E5;
-        padding: 15px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-    .st-svg3{
-        color:#EB595A ;
-        font-size: 40px;
-    }
-    .bg-svg4{
-        background-color: #E5DAD0;
-        padding: 15px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-    .st-svg4{
-        color:#E7AA72 ;
-        font-size: 40px;
-    }
-    .bg-svg5{
-        background-color: #c3d4cb;
-        padding: 15px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-    .st-svg5{
-        color:#2BB86A ;
-        font-size: 40px;
-    }
-    .bg-svg6{
-        background-color: #E2D1D1;
-        padding: 15px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-    }
-    .st-svg6{
-        color:#DE696A ;
-        font-size: 40px;
-    }
-    @media(max-width:1260px){
-        .statistics-wrapper{
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-    }
-    .vacancy-card-title{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 30px;
-    }
-    .vacancy-card-title h1{
-        font-size: 30px;
-        color:#193F82;
-
-    }
-    .vacancy-card-title button{
-        border: none;
-        background: transparent;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-weight: bold;
-        font-size: 15px ;
-        cursor: pointer;
-    }
-    .vacancy-grid{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-    }
-    .vacancy-grid svg{
-        font-size: 50px;
-        color: #C2C2C2;
-    }
-    .vacancy-card-main-item{
-        margin-top: 17px;
-        border: 1px solid #C2C2C2;
-        padding: 10px 30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .vacancy-card{
+    .circle-card{
+        padding:10px 20px;
+        padding-bottom: 20px;
+        background-color: white;
         width: 500px;
     }
-    .vacancy-money{
-        text-align: center;
-        border-left: 1px solid #C2C2C2;
-        padding-left: 30px;
+    .circle-card img{
+        width: 100%;
+        /* height: 400px; */
     }
-    .vacancy-money h3{
-        margin-top: 5px;
-        margin-bottom: 5px;
-        color: #4F75AB;
-    }
-    .vacancy-grid h4{
-        color: #C2C2C2;
-    }
-    .vacancy-card-main-item2 svg{
-        cursor: pointer;
-        font-size: 50px;
-        color: #C2C2C2;
-    }
-    .vacancy-card-main-item2{
-        padding: 15px;
-        border: 1px solid #C2C2C2;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-    }
-    .vacancy-card-main-item-content h3{
-        margin-top: 10px;
+    .circle-card h3{
         margin-bottom: 10px;
     }
-    .vacancy-card-main3 h3{
-        color: #C2C2C2;
-        margin-bottom: 30px;
-    }
-    .vacancy-card-main3 h4{
-        color: #686868;
-    }
-    .vacancy-card-grid3{
+    .cricle-grid{
         display: flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #C2C2C2;
+        justify-content: space-between;
     }
-    .vacancy-card-grid3 input{
+    .circle-wrapper{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-content: center;
+        gap: 30px;
+    }
+    .cricle-grid div{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .circle-card svg{
         cursor: pointer;
     }
-    .vacancy-card-btn{
-        margin-top: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .vacancy-btn1{
-        background-color: #61A1FE;
-       padding: 10px 40px;
-       border: 1px solid #61A1FE;
-       border-radius: 20px;
-       color: white;
-       width: 200px;
-       cursor: pointer;
-    }
-    .vacancy-btn1:hover{
-        background-color: transparent;
-        color: #61A1FE;
-    }
-
-    .vacancy-btn2:hover{
-        background-color: #61A1FE;
-        color: white;
-    }
-    .vacancy-btn2{
-        background-color: white;
-       padding: 10px 40px;
-       width: 200px;
-       border: 1px solid #61A1FE;
-       border-radius: 20px;
-       color: #61A1FE;
-       cursor: pointer;
-    }
-    .vacancy-wrapper{
-        display: flex;
-        align-items: start;
-        justify-content: space-between;
-    }
-    .vacancy-card-btn{
-     
-    }
-    @media(max-width:1560px){
-        .vacancy-wrapper{
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
+    @media(max-width:1600px){
+        .circle-card{
+            width: 450px;
         }
+    }
+    @media(max-width:1450px){
+        .circle-card{
+            width: 400px;
+        }
+    }
+    @media(max-width:1280px){
+        .circle-card{
+            width: 350px;
+        }
+    }
+    @media(max-width:1140px){
+        .circle-wrapper{
+            grid-template-columns: repeat(2,1fr);
+            justify-content: center;
+        }
+    }
+    @media(max-width:750px){
+        .circle-wrapper{
+            grid-template-columns: repeat(1,1fr);
+            margin-left: 150px;
+        }
+        
+    }
+    @media(max-width:640px){
+        .circle-wrapper{
+            grid-template-columns: repeat(1,1fr);
+            margin-left: 100px;
+        }
+        
+    }
+    @media(max-width:560px){
+        .circle-wrapper{
+            grid-template-columns: repeat(1,1fr);
+            margin-left: 80px;
+        }
+        
     }
     @media(max-width:500px){
-        .vacancy-card-title{
-            flex-direction: column;
-            gap: 10px;
-            justify-content: center;
+        .circle-wrapper{
+            grid-template-columns: repeat(1,1fr);
+            margin-left: 50px;
         }
-        .vacancy-card-btn{
-            flex-direction: column;
-            gap: 10px;
+        
+    }
+    @media(max-width:450px){
+        .circle-card{
+            width: 100%;
+        }
+        .circle-wrapper{
+            margin-left: 0;
         }
     }
-    @media(max-width:300px){
-        .vacancy-card-main-item2{
+    /* @media(max-width:300px){
+        .cricle-grid {
             flex-direction: column;
             gap: 10px;
         }
-    }
+    } */
+
+
+
+
     .map{
         padding-top: 150px;
     }
@@ -1627,5 +958,32 @@
         font-size: 25px;
     }
 }
-
+.unions{
+    padding-top:50px ;
+    margin-top: 50px;
+    background-color: #F9F9F9;
+}
+.unions-wrapper img{
+    width: 200px;
+    cursor: pointer;
+}
+.unions-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media(max-width:950px){
+    .unions-wrapper{
+        flex-direction: column;
+        gap: 50px;
+    }
+    .unions img{
+        width:350px
+    }
+}
+@media(max-width:500px){
+    .unions img{
+        width:100%
+    }
+}
 </style>
