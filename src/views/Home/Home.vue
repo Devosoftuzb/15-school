@@ -735,6 +735,7 @@
     .hero-modal h1{
         text-align: center;
         margin-bottom: 20px;
+        color: white;
     }
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
@@ -754,10 +755,11 @@
         border-left: transparent;
         width: 50%;
         background-color: transparent;
+        color: white;
     }
     .hero-modal label{
         cursor: pointer;
-       
+       color: white;
     }
     .hero-modal label div{
         display: flex;
