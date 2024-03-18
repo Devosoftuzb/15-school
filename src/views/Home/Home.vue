@@ -108,15 +108,9 @@
                         State Elected Officers
                     </h2>
                     <div>
-                        <h3>
-                            Representative
-                        </h3>
-                        <h3>
-                            Senators
-                        </h3>
-                        <h3>
-                            Legislation
-                        </h3>
+                       <RouterLink to="/teacher"> <h3>
+                            Batafsil <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" d="M754.752 480H160a32 32 0 1 0 0 64h594.752L521.344 777.344a32 32 0 0 0 45.312 45.312l288-288a32 32 0 0 0 0-45.312l-288-288a32 32 0 1 0-45.312 45.312z"/></svg>
+                       </h3></RouterLink>
                     </div>
             </div>
             <div class="teacher-swiper">
@@ -643,7 +637,7 @@
 
 <style lang="css" scoped>
     .hero{
-        background-image: url("https://mytashkent.uz/wp-content/uploads/2018/09/xx22.jpg");
+        background-image: url("https://www.ms.gov/themes/msgov/images/main-MS-bg.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -860,22 +854,25 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        
     }
     .Conditions-card h2{
         color: white;
         margin-top: 200px;
-
+        position: relative;
+        z-index: 1;
     }
-    /* .conditions-card-opacity{
+     .conditions-card-opacity{
         position: absolute;
+        
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         background-color: rgba(30, 29, 29, 0.567);
-        display: none;
+        /* display: none; */
     }
-    .Conditions-card:hover  .conditions-card-opacity {
+    /* .Conditions-card:hover  .conditions-card-opacity {
         display: block;
     }
     .Conditions-card:hover  .Conditions-card h3{
@@ -884,7 +881,28 @@
     .Conditions-card h3{
         color: white;
         display: none;
-    } */
+    }  */
+   
+    @media(max-width:1700px){
+        .Conditions-wrapper{
+            left: 10%
+        }
+    }
+    @media(max-width:1650px){
+        .Conditions-wrapper{
+            left: 6%
+        }
+    }
+    @media(max-width:1580px){
+        .Conditions-wrapper{
+            left: 3%
+        }
+    }
+    @media(max-width:1230px) {
+        .Conditions-wrapper{
+            left: 10%
+        }
+    }
     @media(max-width:1440px){
         .Conditions-card{
             width: 300px;
@@ -897,12 +915,7 @@
             left: 17%
         }
     }
-    @media(max-width:1230px) {
-        .Conditions-wrapper{
-            left: 10%
-        }
-    }
-    @media(max-width:1080px) {
+    @media(max-width:1180px) {
         .Conditions-wrapper{
             left: 20px;
         }
@@ -991,7 +1004,7 @@
         gap:10px;
     }
     .teacher-bio-icon-grid a{
-        color: rgb(96, 96, 96);
+       color: white;
         font-size: 35px;
     }
     .teacher-subtitle{
@@ -1018,6 +1031,9 @@
         padding-bottom: 10px;
         color: #878787;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
     .teacher-swiper{
         margin-top: 20px;
