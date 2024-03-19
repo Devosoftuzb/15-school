@@ -55,6 +55,7 @@
 
 <style lang="css" scoped>
 footer{
+    margin-top: 80px;
     /* margin-top: 100px; */
     padding-top: 50px;
     background-color: #009189;
