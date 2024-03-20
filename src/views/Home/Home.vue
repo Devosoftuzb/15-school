@@ -37,9 +37,49 @@
         </div>
        </div>
     </section>
-    <section>
-        <div class="">
-
+    <section class="new">
+        <div class="container">
+            <div class="new-title">
+                <h1>
+                    Yangiliklar
+                </h1>
+                <router-link to="/yangilik"><button>Barcha yangiliklar</button></router-link>
+            </div>
+            <div class="new-wrapper">
+                <div class="new-card">
+                    <img src="https://media.huquqiyportal.uz/public/files/1696587867077.jpg" alt="">
+                    <div class="new-card-content">
+                        <h3>
+                            Adliya xabari
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga sed dolores error commodi adipisci tempore! Unde facere doloremque cupiditate consectetur sequi sit, libero iste optio eaque, voluptatem quos veritatis possimus.
+                        </p>
+                        <div class="new-icon">
+                            <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M14.5 16h-13C.67 16 0 15.33 0 14.5v-12C0 1.67.67 1 1.5 1h13c.83 0 1.5.67 1.5 1.5v12c0 .83-.67 1.5-1.5 1.5M1.5 2c-.28 0-.5.22-.5.5v12c0 .28.22.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5z"/><path fill="currentColor" d="M4.5 4c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m7 0c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m4 2H.5C.22 6 0 5.78 0 5.5S.22 5 .5 5h15c.28 0 .5.22.5.5s-.22.5-.5.5"/></svg>
+                                    <span>
+                                        06.10.24
+                                    </span>
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"/></svg>
+                                    <span>
+                                        126 
+                                    </span>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new-cursor">
+                    <div class="left-cursor">
+                        <svg class="right" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" stroke-linecap="square" d="M10 14L3 7.5L10 1"/></svg>
+                    </div>
+                    <div class="right-cursor">
+                        <svg class="left" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1"/></svg>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="Teacher">
@@ -413,6 +453,7 @@
 
 <style lang="css" scoped>
     .hero{
+        margin-top: 140px;
         background-image: url("https://huquqiyportal.uz/_nuxt/img/slide.f00f149.png");
         background-position: center;
         background-repeat: no-repeat;
@@ -485,9 +526,146 @@
             gap:10px;
         }
     }
+    .new{
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .new-title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    .new-title h1{
+        font-size: 40px;
+        font-weight: 500;
+    }
+    .new-title button{
+        padding: 10px 20px;
+        border-radius: 40px;
+        border: 1px solid #597BA2;
+        background-color: #597BA2;
+        color: white;
+        cursor: pointer;
+        font-size: 15px ;
+    }
+    .new-title button:hover{
+        background-color: transparent;
+        color: #597BA2;
+    }
+    .new-card img{
+        width: 500px;
+        height: 300px;
+        border-radius: 30px;
+    }
+    .new-card{
+        display: flex;
+        gap: 30px;
+    }
+    .new-card h3{
+        font-size: 25px;
+        margin-bottom: 20px;
 
-
-
+    }
+    .new-card p{
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+    .new-icon{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .new-icon div{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #4a4a4ace;
+        cursor: pointer;
+    }
+    .new-cursor{
+        position: absolute;
+        bottom: 32px;
+        right: 146px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .new-cursor svg{
+        font-size: 30px;
+        color: white;
+    }
+    .left-cursor{
+        width: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 15px;
+        background-color: #597BA3;
+        cursor: pointer;
+        border: 1px solid #597BA3;
+    }
+    .right-cursor{
+        width: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 15px;
+        background-color: #597BA3;
+        cursor: pointer;
+        border: 1px solid #597BA3;
+    }
+    .left-cursor:hover{
+        background-color: white;
+        .right{
+            color: #597BA3;
+        }
+    }
+    .right-cursor:hover{
+        background-color: white;
+        .left{
+            color: #597BA3;
+        }
+    }
+    @media(max-width:1040px){
+        .new-card{
+            flex-direction: column;
+            gap: 30px;
+        }
+        .new-card img{
+            width: 100%;
+            height: 100%;
+        }
+        .new-cursor{
+            bottom: -7px;
+            right: 20px;
+        }
+    }
+    @media(max-width:400px){
+        .new-title{
+            flex-direction: column;
+            gap: 20px;
+        }
+        .new-cursor{
+            width: 100%;
+            position: relative;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .left-cursor{
+            border-radius: 30px;
+            width: 40%;
+        }
+        .right-cursor{
+            border-radius: 30px;
+            width: 40%;
+        }
+    }
 
 
     .Teacher{

@@ -56,12 +56,12 @@
                         </span></router-link>
                     </li>
                     <li>
-                        <router-link to="/togarak"><span>
+                        <router-link to="/lessons"><span>
                             Togaraklar
                         </span></router-link>
                     </li>
                     <li>
-                        <router-link to="/boglanish"><span>
+                        <router-link to="/contact"><span>
                             Bog`lanish
                         </span></router-link>
                     </li>
@@ -76,10 +76,27 @@
         <div class="header-modal-mobile">
             <ul>
                     <li>
-                        <router-link to="/">Bosh sahifa</router-link>
+                        <router-link to="/"><span>
+                            Bosh sahifa
+                        </span></router-link>
                     </li>
                     <li>
-                        <router-link to="/teacher">Ustozlar</router-link>
+                        <router-link to="/teacher"><span>Ustozlar</span></router-link>
+                    </li>
+                    <li>
+                        <router-link to="/yangilik"><span>
+                            Yangliklar
+                        </span></router-link>
+                    </li>
+                    <li>
+                        <router-link to="/lessons"><span>
+                            Togaraklar
+                        </span></router-link>
+                    </li>
+                    <li>
+                        <router-link to="/contact"><span>
+                            Bog`lanish
+                        </span></router-link>
                     </li>
                 </ul>
         </div>
@@ -101,7 +118,13 @@
 
 <style lang="css" scoped>
     header{
-        margin-top: 10px;
+        /* border: 1px solid black; */
+        /* margin-top: 10px; */
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
     }
     .heaer-logo{
         cursor: pointer;
@@ -249,18 +272,24 @@
     background-color: rgb(36, 36, 36);
     padding-top: 50px;
     display: none;
+    height: 100vh;
+   /* overflow: auto;
+   overflow-y: hidden; */
+
 }
 .header-modal-mobile ul {
     text-align: center;
 }
 .header-modal-mobile ul li {
-    margin-top: 20px;
+    margin-top: 50px;
 }
-.header-modal-mobile ul li a {
+.header-modal-mobile ul li span {
     color: white;
+    font-size: 30px;
 }
 .db{
     display: block;
+    overflow-y: hidden;
 }
 .header-line-y{
     height: 50px;
@@ -294,6 +323,14 @@ header ul li span{
     @media(max-width:400px){
         .header-top-weather{
             display: none;
+        }
+    }
+    @media(max-width:390px){
+        .heaer-logo h1{
+            font-size: 20px;
+        }
+        .heaer-logo h3{
+            font-size: 15px;
         }
     }
 </style>

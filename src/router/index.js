@@ -22,6 +22,16 @@ const router = createRouter({
           path:'/yangilik',
           name:'yangilik',
           component: () => import("../views/New/New.vue"),
+        },
+        {
+          path:'/lessons',
+          name:'lessons',
+          component: () => import("../views/Lessons/Lesson.vue"),
+        },
+        {
+          path:'/contact',
+          name:'contact',
+          component: () => import("../views/Contact/Contact.vue"),
         }
       ]
     },

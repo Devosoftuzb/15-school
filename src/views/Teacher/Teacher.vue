@@ -1,13 +1,27 @@
 <template>
+    <div class="teacher-header">
+        <div class="container">
+            <div class="teacher-header-wrapper">
+                <div class="header-title">
+                    <h1>
+                        Ustozlar
+                    </h1>
+                </div>
+                <div class="teacher-header-foto">
+                    <img src="https://huquqiyportal.uz/_nuxt/img/icon-test.4d53b45.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="teacher2">
         <div class="container">
             <div class="teacher2-wrapper">
                 <div class="teacher2-content">
-                    <div class="card-title">
+                    <!-- <div class="card-title">
                         <h1>
                             Ustozlar
                         </h1>
-                    </div>
+                    </div> -->
                     <div class="techer2-card">
                     <div class="card-wrapper">
                         <div class="card-wrapper-foto">
@@ -81,6 +95,28 @@
 </script>
 
 <style lang="css" scoped>
+    .teacher-header{
+        margin-top: 140px;
+        padding: 20px;
+        background-color: #E1EFED;
+    }
+    .teacher-header-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header-title h1{
+        font-size: 40px;
+        font-weight: 400;
+    }
+    @media(max-width:425px){
+    .header-title h1{
+        text-align: center;
+    }
+    .teacher-header-foto{
+        display: none;
+    }
+}
     .card-title h1{
         font-size: 60px;
         font-weight: 300;
@@ -125,6 +161,7 @@
         /* justify-content: space-between; */
     }
     .teacher2-wrapper{
+        margin-top: 50px;
         width: 100%;
         display: flex;
         gap: 20px;
@@ -137,8 +174,11 @@
     }
     .teacher2-content{
         width: 100%;
-        box-shadow: 5px 10px 5px  rgb(79, 79, 79);
+        /* box-shadow: 5px 10px 5px  rgb(79, 79, 79); */
+        border:1px solid #DEE5ED;
+        border-radius: 30px;
         padding:50px 0;
+        padding-left: 10px;
     }
     .menu-line{
         margin-bottom: 10px;
@@ -184,12 +224,16 @@
     @media(max-width:300px){
        .card-wrapper-foto img{
         width: 100%;
+        border-radius: 20px;
        }
        .card-content h2{
         font-size: 30px;
        }
        .card-grid{
         gap: 2px;
+       }
+       .teacher2-content{
+        padding:20px 10px;
        }
     }
 </style>
