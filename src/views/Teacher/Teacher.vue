@@ -91,7 +91,35 @@
 </template>
 
 <script setup>
+import { onMounted, ref, reactive } from "vue";
+import axios from "@/services/axios";
 
+const store = reactive({
+  allProducts: false,
+});
+
+const getAllProduct = () => {
+  axios
+    .get("/teachers/find-all", {
+    //   headers: {
+    //     Authorization: `Bearer ${localStorage.getItem("token")}`,
+    //   },
+    })
+    .then((res) => {
+      console.log(res.data);
+      store.allProducts = res.data?.data;
+      store.error = false;
+    })
+    .catch((error) => {
+    //   notification.warning(error.message);
+      store.error = true;
+      store.allProducts = error.message;
+    });
+};
+
+onMounted(() => {
+  getAllProduct();
+});
 </script>
 
 <style lang="css" scoped>
