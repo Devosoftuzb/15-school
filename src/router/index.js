@@ -32,8 +32,18 @@ const router = createRouter({
           path:'/contact',
           name:'contact',
           component: () => import("../views/Contact/Contact.vue"),
-        }
+        },
       ]
+    },
+    {
+      path:'/admin',
+      name:'admin',
+      component: () => import("../admin/Home/Home.vue"),
+    },
+    {
+      path:'/ustozlar',
+      name:'ustozlar',
+      component: () => import("../admin/Ustozlar/Ustozlar.vue"),
     },
     {
       path: "/:pathMatch(.*)*",
