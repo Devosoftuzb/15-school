@@ -46,6 +46,21 @@ const router = createRouter({
       component: () => import("../admin/Ustozlar/Ustozlar.vue"),
     },
     {
+      path:'/yangiliklar',
+      name:'yangiliklar',
+      component: () => import("../admin/Yangiliklar/Yangiliklar.vue"),
+    },
+    {
+      path:'/hamkorlar',
+      name:'hamkorlar',
+      component: () => import("../admin/Hamkorlar/Hamkorlar.vue"),
+    },
+    {
+      path:'/togaraklar',
+      name:'togaraklar',
+      component: () => import("../admin/Togaraklar/Togaraklar.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "error",
       component: () => import("../views/Error/Error.vue"),

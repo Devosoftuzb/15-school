@@ -4,10 +4,10 @@
         <HeaderAdmin/>
         <header class="header-bottom">
             <h1>
-                O'qituvchi
+                Hamkorlar
             </h1>
             <button @click="oppenModal">
-                O'qituvchi Qoshish
+                Hamkor Qoshish
             </button>
         </header>
         <main>
@@ -22,17 +22,7 @@
                         </td>
                         <td>
                             <h3>
-                                F.I.O
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Yo'nalish
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Telefon raqami
+                               Nomi
                             </h3>
                         </td>
                         <td>
@@ -44,22 +34,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
-                            <img src="https://www.ms.gov/sites/default/files/2022-05/MS_Lieutenant-Governor-Delbert-Hosemann.jpg" alt="">
+                        <td class="yangilik-foto">
+                            <img src="https://advice.uz/static/assets/img/advice.svg" alt="foto">
                         </td>
                         <td>
                             <h3>
-                                Tashkulov Akbar
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Matematika ustoz
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                               970286868
+                                Lorem.uz
                             </h3>
                         </td>
                         <td>
@@ -68,75 +48,45 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <img src="https://www.ms.gov/sites/default/files/2022-05/MS_Lieutenant-Governor-Delbert-Hosemann.jpg" alt="">
+                        <td class="yangilik-foto">
+                            <img src="https://advice.uz/static/assets/img/advice.svg" alt="foto">
                         </td>
                         <td>
                             <h3>
-                                Tashkulov Akbar
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Matematika ustoz
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                               970286868
+                                Lorem.uz
                             </h3>
                         </td>
                         <td>
                             <svg class="delate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z"/></svg>
-                            <svg  class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+                            <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <img src="https://www.ms.gov/sites/default/files/2022-05/MS_Lieutenant-Governor-Delbert-Hosemann.jpg" alt="">
+                        <td class="yangilik-foto">
+                            <img src="https://advice.uz/static/assets/img/advice.svg" alt="foto">
                         </td>
                         <td>
                             <h3>
-                                Tashkulov Akbar
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Matematika ustoz
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                               970286868
+                                Lorem.uz
                             </h3>
                         </td>
                         <td>
                             <svg class="delate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z"/></svg>
-                            <svg  class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+                            <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <img src="https://www.ms.gov/sites/default/files/2022-05/MS_Lieutenant-Governor-Delbert-Hosemann.jpg" alt="">
+                        <td class="yangilik-foto">
+                            <img src="https://advice.uz/static/assets/img/advice.svg" alt="foto">
                         </td>
                         <td>
                             <h3>
-                                Tashkulov Akbar
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Matematika ustoz
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                               970286868
+                                Lorem.uz
                             </h3>
                         </td>
                         <td>
                             <svg class="delate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z"/></svg>
-                            <svg  class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+                            <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
                         </td>
                     </tr>
                 </tbody>
@@ -169,7 +119,7 @@
         <div class="create-modal">
             <div class="create-modal-header">
                 <h1>
-                    Hodim qoshish
+                    Hamkor qoshish
                 </h1>
                 <button @click="oppenModal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z" clip-rule="evenodd"/></svg>
@@ -177,82 +127,12 @@
             </div>
             <div class="create-modal-main">
                 <form>
-                    <div class="form-grid form-name">
-                        <label for="fio">
-                            <h3>
-                                F.I.O
-                            </h3>
-                            <input required id="fio" type="text">
-                        </label>
-                        <label  for="lavozim">
-                            <h3>
-                                Yonalish
-                            </h3>
-                            <input required id="lavozim" type="text">
-                        </label>
-                    </div>
-                        <div class="form-grid">
-                            <label  for="raqam">
-                            <h3>
-                                Telefon raqam
-                            </h3>
-                            <input class="inp-number" required id="raqam" type="number">
-                        </label>
-                        <div class="modal-foto">
-                        <h3>
-                            Rasm qoish
-                        </h3>
-                        <label class="file-input-container" for="foto">
-                            <span>
-                                Rasm tanglang
-                            </span>
-                            <input type="file">
-                        </label> 
-                    </div>
-                        </div>
-                    <div class="modal-footer">
-                    <button class="submitBtn" type="submit">
-                        Hodim qoshish
-                    </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-   
-   
-        </div>
-        <div :id="openChange ? 'openChange' : '' " class="modal-change">
-        <div class="change-modal">
-            <div class="change-header">
-                <h1>
-                    Hodim ozgartirish
-                </h1>
-                <button @click="openModalChange">
-                    <svg  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z" clip-rule="evenodd"/></svg>
-                </button>
-            </div>
-            <div class="change-main">
-                <form>
                     <div class="form-grid">
                         <label for="fio">
                             <h3>
-                                F.I.O
+                               Nomi
                             </h3>
                             <input required id="fio" type="text">
-                        </label>
-                        <label  for="lavozim">
-                            <h3>
-                                Lavozim
-                            </h3>
-                            <input required id="lavozim" type="text">
-                        </label>
-                    </div>
-                    <div class="form-grid">
-                        <label  for="raqam">
-                            <h3>
-                                Telefon raqam
-                            </h3>
-                            <input class="inp-number" required id="raqam" type="number">
                         </label>
                         <div class="modal-foto">
                             <h3>
@@ -268,7 +148,49 @@
                     </div>
                     <div class="modal-footer">
                     <button class="submitBtn"ype="submit">
-                        Hodim qoshish
+                        Hamkor qoshish
+                    </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+   
+   
+        </div>
+        <div :id="openChange ? 'openChange' : '' " class="modal-change">
+        <div class="change-modal">
+            <div class="change-header">
+                <h1>
+                    Hamkor o`zgartirish
+                </h1>
+                <button @click="openModalChange">
+                    <svg  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z" clip-rule="evenodd"/></svg>
+                </button>
+            </div>
+            <div class="change-main">
+                <form>
+                    <div class="form-grid">
+                        <label for="fio">
+                            <h3>
+                               Nomi
+                            </h3>
+                            <input required id="fio" type="text">
+                        </label>
+                        <div class="modal-foto">
+                            <h3>
+                                Rasm qoish
+                            </h3>
+                            <label class="file-input-container" for="foto">
+                                <span>
+                                    Rasm tanglang
+                                </span>
+                                <input type="file">
+                            </label> 
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button class="submitBtn"ype="submit">
+                        Hamkor ozgartirish
                     </button>
                     </div>
                 </form>
@@ -346,15 +268,13 @@ table tbody td {
     text-align: center;
     padding-top:20px;
 }
-table tbody td img{
-    display: felx;
-    align-items: center;
-    justify-content: center; 
-}
 table tbody img{
-    width:100px;
+    width:200px;
     height:100px;
     border-radius:10px;
+}
+.yangilik-foto{
+    width: 300px;
 }
 .delate{
     font-size: 30px;
@@ -412,7 +332,7 @@ footer button:hover{
 .create-modal{
     padding: 50px;
     width: 50%  ;
-    height: 50%;
+    height: 320px;
     background-color: white;
     position: absolute;
     top: 20%;
@@ -439,7 +359,7 @@ footer button:hover{
 .change-modal{
     padding: 50px;
     width: 50%  ;
-    height: 50%;
+    height: 320px;
     background-color: white;
     position: absolute;
     top: 20%;
@@ -556,9 +476,17 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: transparent;
     color: #624BFF;
   }
-  @media(max-width:1000px){
-    .Ustozlar{
-        margin-left: 0;
-    }
+.yangilik-text{
+    width: 400px
+  }
+  .yangilik-grid{
+    width: 400px;
+  }
+  .yangilik_text textarea{
+    resize: none; /* Запрещаем изменение размера пользователем */
+    overflow: hidden; /* Скрытие содержимого, которое не помещается */
+    width: 100%; /* Размер подстраивается под содержимое */
+    height: 100px; /* Размер подстраивается под содержимое */
+
   }
 </style>
