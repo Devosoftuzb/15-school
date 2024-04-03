@@ -1,7 +1,8 @@
 <template>
     <Saidbar/>
     <div class="Home">
-        <header>
+        <HeaderAdmin/>
+        <header class="header-bottom">
             <h1>
                 Bosh panel
             </h1>
@@ -79,6 +80,7 @@
 </template>
 <script setup>
 import Saidbar from '../../components/Saidbar.vue'
+import HeaderAdmin from '../../components/HeaderAdmin.vue'
 </script>
 
 <style scoped>
@@ -92,7 +94,7 @@ import Saidbar from '../../components/Saidbar.vue'
 .Home h1{
     color: white;
 }
-header{
+.header-bottom{
     width: 100%;
     padding: 30px;
     background-color: #624BFF;
@@ -170,4 +172,47 @@ main{
         grid-template-columns: repeat(1,1fr);
     }
 }
+@media(max-width:1000px){
+    .Ustozlar{
+        margin-left: 0;
+    }
+    .form-grid{
+        flex-direction: column;
+        gap: 30px;
+    }
+  }
+  @media(max-width:900px){
+    .cont {
+        overflow: auto;
+        overflow-x: scroll;
+    }
+    .cont table{
+        width: 900px;
+        overflow: auto;
+        overflow-x: scroll;
+        /* display: none; */
+    }
+  }
+  @media(max-width:600px){
+    .create-modal{
+        width: 80%;
+        left: 10%;
+    }
+  }
+  @media(max-width:400px){
+    .create-modal{
+        padding: 20px;
+    }
+  }
+  @media(max-width:600px){
+    .change-modal{
+        width: 80%;
+        left: 10%;
+    }
+  }
+  @media(max-width:400px){
+    .change-modal{
+        padding: 20px;
+    }
+  }
 </style>

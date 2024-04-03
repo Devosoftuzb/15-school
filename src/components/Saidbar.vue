@@ -38,6 +38,12 @@
                         To`garaklar
                     </h3>
                 </router-link> 
+                <router-link to="/habarlar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M4 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1v2a1 1 0 0 0 1.707.707L9.414 13H15a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/><path d="M8.023 17.215c.033-.03.066-.062.098-.094L10.243 15H15a3 3 0 0 0 3-3V8h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-1v2a1 1 0 0 1-1.707.707L14.586 18H9a1 1 0 0 1-.977-.785"/></g></svg>
+                    <h3>
+                        Xabarlar
+                    </h3>
+                </router-link> 
             </ul>
         </div>
 
@@ -62,8 +68,10 @@ const sidebar = useSidebarStore();
     padding-left:10px;
     position: fixed;
     transition: left 0.5s ease;
+    z-index: 12;
 }
 .saidbar-logo{
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,11 +95,6 @@ ul a svg{
 }
 ul a:hover{
     background-color: #624BFF;
-}
-@media(max-width:800px){
-    .Saidbar{
-        display: none;
-    }
 }
 .Saidbar-of{
     display: none;

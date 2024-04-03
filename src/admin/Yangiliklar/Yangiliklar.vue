@@ -366,14 +366,13 @@ footer button:hover{
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -330px;
     background-color: rgba(0, 0, 0, 0.527);
     display: none;
 }
 .create-modal{
     padding: 50px;
     width: 50%  ;
-    height: 500px;
     background-color: white;
     position: absolute;
     top: 20%;
@@ -393,14 +392,13 @@ footer button:hover{
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -320px;
     background-color: rgba(0, 0, 0, 0.692);
     display: none;
 }
 .change-modal{
     padding: 50px;
     width: 50%  ;
-    height: 500px;
     background-color: white;
     position: absolute;
     top: 20%;
@@ -524,10 +522,53 @@ input[type=number]::-webkit-outer-spin-button {
     width: 400px;
   }
   .yangilik_text textarea{
-    resize: none; /* Запрещаем изменение размера пользователем */
-    overflow: hidden; /* Скрытие содержимого, которое не помещается */
-    width: 100%; /* Размер подстраивается под содержимое */
-    height: 100px; /* Размер подстраивается под содержимое */
+    resize: none; 
+    overflow: hidden; 
+    width: 100%; 
+    height: 100px; 
 
+  }
+  @media(max-width:1000px){
+    .Ustozlar{
+        margin-left: 0;
+    }
+    .form-grid{
+        flex-direction: column;
+        gap: 30px;
+    }
+  }
+  @media(max-width:900px){
+    .cont {
+        overflow: auto;
+        overflow-x: scroll;
+    }
+    .cont table{
+        width: 900px;
+        overflow: auto;
+        overflow-x: scroll;
+        /* display: none; */
+    }
+  }
+  @media(max-width:600px){
+    .create-modal{
+        width: 80%;
+        left: 10%;
+    }
+  }
+  @media(max-width:400px){
+    .create-modal{
+        padding: 20px;
+    }
+  }
+  @media(max-width:600px){
+    .change-modal{
+        width: 80%;
+        left: 10%;
+    }
+  }
+  @media(max-width:400px){
+    .change-modal{
+        padding: 20px;
+    }
   }
 </style>
