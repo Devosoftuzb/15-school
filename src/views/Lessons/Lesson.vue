@@ -22,10 +22,10 @@
                 </h1> -->
             </div>
             <div class="circle-wrapper">
-                <div class="circle-card">
+                <div class="circle-card" v-for="i in store.allProducts" :key="i.id">
                     <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
                     <h3>
-                        Sog`liqni saqlash
+                        {{ i.title }}
                     </h3>
                     <div class="cricle-grid">
                         <div>   
@@ -36,97 +36,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
                         </div>
                         <span>
-                            2 soat 30 daqiqa
-                        </span>
-                    </div>
-                </div>
-                <div class="circle-card">
-                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
-                    <h3>
-                        Sog`liqni saqlash
-                    </h3>
-                    <div class="cricle-grid">
-                        <div>   
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                        </div>
-                        <span>
-                            2 soat 30 daqiqa
-                        </span>
-                    </div>
-                </div>
-                <div class="circle-card">
-                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
-                    <h3>
-                        Sog`liqni saqlash
-                    </h3>
-                    <div class="cricle-grid">
-                        <div>   
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                        </div>
-                        <span>
-                            2 soat 30 daqiqa
-                        </span>
-                    </div>
-                </div>
-                <div class="circle-card">
-                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
-                    <h3>
-                        Sog`liqni saqlash
-                    </h3>
-                    <div class="cricle-grid">
-                        <div>   
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                        </div>
-                        <span>
-                            2 soat 30 daqiqa
-                        </span>
-                    </div>
-                </div>
-                <div class="circle-card">
-                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
-                    <h3>
-                        Sog`liqni saqlash
-                    </h3>
-                    <div class="cricle-grid">
-                        <div>   
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                        </div>
-                        <span>
-                            2 soat 30 daqiqa
-                        </span>
-                    </div>
-                </div>
-                <div class="circle-card">
-                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
-                    <h3>
-                        Sog`liqni saqlash
-                    </h3>
-                    <div class="cricle-grid">
-                        <div>   
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64"><path fill="#ffce31" d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z"/></svg>
-                        </div>
-                        <span>
-                            2 soat 30 daqiqa
+                            {{ i.week_days }}
                         </span>
                     </div>
                 </div>
@@ -137,7 +47,35 @@
 </template>
 
 <script setup>
+import { onMounted, ref, reactive } from "vue";
+import axios from "@/services/axios";
 
+const store = reactive({
+    allProducts: false,
+});
+
+const getAllProduct = () => {
+    axios
+        .get("/lessons/find-all", {
+            //   headers: {
+            //     Authorization: `Bearer ${localStorage.getItem("token")}`,
+            //   },
+        })
+        .then((res) => {
+            console.log(res.data);
+            store.allProducts = res.data
+            store.error = false;
+        })
+        .catch((error) => {
+            notification.warning(error.message);
+            store.error = true;
+            store.allProducts = error.message;
+        });
+};
+
+onMounted(() => {
+    getAllProduct();
+});
 </script>
 
 <style lang="css" scoped>
