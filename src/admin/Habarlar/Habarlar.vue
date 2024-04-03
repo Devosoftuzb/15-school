@@ -4,11 +4,8 @@
         <HeaderAdmin/>
         <header class="header-bottom">
             <h1>
-                Togaraklar
+                Xabarlar
             </h1>
-            <button @click="oppenModal">
-                Togarak Qoshish
-            </button>
         </header>
         <main>
             <div class="cont">
@@ -17,17 +14,12 @@
                     <tr>
                         <td>
                             <h3>
-                            Rasm
+                               Telefon raqam
                             </h3>
                         </td>
                         <td>
                             <h3>
-                               Nomi
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Vaqti
+                                Habar
                             </h3>
                         </td>
                         <td>
@@ -40,21 +32,17 @@
                 <tbody>
                     <tr>
                         <td class="yangilik-foto">
-                            <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
-                        </td>
-                        <td>
                             <h3>
-                                Lorem darsi
+                                970206969
                             </h3>
                         </td>
-                        <td>
-                            <h3>
-                                Mon/Thu/Sun
-                            </h3>
+                        <td class="habar-text">
+                            <p >
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit minima error sequi asperiores doloremque neque? Ullam itaque, impedit molestias exercitationem eligendi, mollitia, in magni porro nemo praesentium quisquam deserunt nobis?
+                            </p>
                         </td>
                         <td>
                             <svg class="delate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z"/></svg>
-                            <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
                         </td>
                     </tr>
                 </tbody>
@@ -309,13 +297,14 @@ footer button:hover{
     top: 0;
     left: 0;
     right: 0;
-    bottom: -330px;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.527);
     display: none;
 }
 .create-modal{
     padding: 50px;
     width: 50%  ;
+    height: 500px;
     background-color: white;
     position: absolute;
     top: 20%;
@@ -470,6 +459,12 @@ input[type=number]::-webkit-outer-spin-button {
     width: 100%; /* Размер подстраивается под содержимое */
     height: 100px; /* Размер подстраивается под содержимое */
 
+  }
+  .habar-text{
+    width: 500px;
+  }
+  .habar-text p{
+    width: 100%;
   }
   @media(max-width:1000px){
     .Ustozlar{

@@ -61,6 +61,16 @@ const router = createRouter({
       component: () => import("../admin/Togaraklar/Togaraklar.vue"),
     },
     {
+      path:'/habarlar',
+      name:'habarlar',
+      component: () => import("../admin/Habarlar/Habarlar.vue"),
+    },
+    {
+      path:'/login',
+      name:'login',
+      component: () => import("../admin/Login/Login.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       name: "error",
       component: () => import("../views/Error/Error.vue"),
