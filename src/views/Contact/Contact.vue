@@ -44,13 +44,13 @@
                 <h2>
                     Izoh qoldiring
                 </h2>
-                <form  action="">
+                <form  @submit.prevent="createContact">
                     <label class="tel" for="tel">
                         <h3>
                             Telefon raqamingizdi kiriting
                         </h3>
                        <div class="tel-grid">
-                        <span>+9989</span> <input id="tel" type="number">
+                        <span>+9989</span> <input v-model="contact.phone" id="tel" type="number">
                        </div>
                     </label>
                     <!-- <br> -->
@@ -59,9 +59,10 @@
                             Izoh yozing
                         </h3>
                         <!-- <div class="comment-box"> -->
-                            <textarea class="comment" name="" id="coment"></textarea>
+                            <textarea v-model="contact.info" class="comment" name="" id="coment"></textarea>
                         <!-- </div> -->
                     </label>
+                    <button type="submit" class="submit-btn">Jo'natish</button>
                 </form>
             </div>
             <div clss="main-map">
@@ -73,10 +74,44 @@
 </template>
 
 <script setup>
+import { reactive } from 'vue';
+import axios from '@/services/axios'
 
+const contact = reactive ({
+    phone: "",
+    info: "",
+})
+
+const createContact = () => {
+    const data = {
+        phone: String(contact.phone),
+        info: contact.info,
+    };
+
+    axios
+        .post("/contact/create", data, {
+        })
+        .then((res) => {
+            console.log(res)
+            contact.phone = "";
+            contact.info = "";
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
 </script>
 
 <style lang="css" scoped>
+    .submit-btn {
+        background-color: #597BA2;
+        color: white;
+        padding: 10px 20px 10px 20px;
+        border: 1px solid #597BA2;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+
     .contact-header{
         margin-top: 140px;
         padding: 20px;

@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { reactive } from "vue";
 import axios from "@/services/axios";
 import router from "@/router";
 
