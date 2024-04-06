@@ -83,23 +83,23 @@ const router = createRouter({
   ],
 });
 
-router.beforeEach((to, from, next) => {
-  let token = localStorage.getItem("token");
+// router.beforeEach((to, from, next) => {
+//   let token = localStorage.getItem("token");
 
-  if (
-    (to.name == "admin" ||
-      to.name == "ustozlar" ||
-      to.name == "yangiliklar" ||
-      to.name == "hamkorlar" ||
-      to.name == "togaraklar" ||
-      to.name == "habarlar") &&
-    to.name !== "login" &&
-    !token
-  ) {
-    next({ name: "login" });
-  } else {
-    next();
-  }
-});
+//   if (
+//     (to.name == "admin" ||
+//       to.name == "ustozlar" ||
+//       to.name == "yangiliklar" ||
+//       to.name == "hamkorlar" ||
+//       to.name == "togaraklar" ||
+//       to.name == "habarlar") &&
+//     to.name !== "login" &&
+//     !token
+//   ) {
+//     next({ name: "login" });
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;

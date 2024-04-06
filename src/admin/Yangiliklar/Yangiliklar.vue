@@ -526,7 +526,7 @@ input[type=number]::-webkit-outer-spin-button {
     overflow: hidden; 
     width: 100%; 
     height: 100px; 
-
+    padding: 10px;
   }
   @media(max-width:1000px){
     .Ustozlar{

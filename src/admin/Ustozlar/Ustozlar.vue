@@ -159,6 +159,20 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="form-grid necessary">
+                            <label for="raqam">
+                                <h3>
+                                    Malumot
+                                </h3>
+                                <textarea class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
+                            </label>
+                        </div>
+                        <div class="role">
+                            <h3>
+                                Role:
+                            </h3>
+                            <input type="checkbox" name="" id="">
+                        </div>
                         <div class="modal-footer">
                             <button class="submitBtn" type="submit">
                                 Hodim qoshish
@@ -219,6 +233,20 @@
                                     <input type="file">
                                 </label>
                             </div>
+                        </div>
+                        <div class="form-grid necessary">
+                            <label for="raqam">
+                                <h3>
+                                    Malumot
+                                </h3>
+                                <textarea class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
+                            </label>
+                        </div>
+                        <div class="role">
+                            <h3>
+                                Role:
+                            </h3>
+                            <input type="checkbox" name="" id="">
                         </div>
                         <div class="modal-footer">
                             <button class="submitBtn" ype="submit">
@@ -487,11 +515,12 @@ footer button:hover {
     width: 50%;
     background-color: white;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 28%;
     border-radius: 30px;
     z-index: 10;
     /* margin-left: 400px; */
+    
 }
 
 #openModal {
@@ -507,7 +536,7 @@ footer button:hover {
     top: 0;
     left: 0;
     right: 0;
-    bottom: -330px;
+    bottom: -530px;
     background-color: rgba(0, 0, 0, 0.692);
     display: none;
 }
@@ -517,7 +546,7 @@ footer button:hover {
     width: 50%;
     background-color: white;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 28%;
     border-radius: 30px;
     z-index: 10;
@@ -655,7 +684,26 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: transparent;
     color: #624BFF;
 }
-
+.teacher-info{
+    resize: none; 
+    overflow: hidden; 
+    width: 100%; 
+    height: 100px; 
+    padding: 10px;
+}
+.role input{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.role{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.necessary{
+    margin-bottom: 15px;
+}
 @media(max-width:1000px) {
     .Ustozlar {
         margin-left: 0;
