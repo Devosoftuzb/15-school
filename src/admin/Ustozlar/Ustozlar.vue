@@ -42,7 +42,7 @@
                             </td>
                         </tr>
                     </thead>
-                    <tbody v-for="i in store.teacherAll" :key="i.id">
+                    <tbody v-for="i in store.pagTeachersAll[store.pag]" :key="i.id">
                         <tr>
                             <td>
                                 <img :src="CONFIG.API_URL + i.image" alt="">
@@ -70,7 +70,7 @@
                                             d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z" />
                                     </svg>
                                 </button>
-                                <button  class="change-btn" @click="getOneTeacher(i.id)">
+                                <button class="change-btn" @click="getOneTeacher(i.id)">
                                     <svg class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                         viewBox="0 0 24 24">
                                         <path fill="currentColor"
@@ -85,7 +85,7 @@
         </main>
         <footer>
             <div class="footer-wrapper">
-                <button>
+                <button @click="store.pag == 0 ? store.pag = store.pagTeachersAll.length - 1  : store.pag -= 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="2" d="M5 12h14M5 12l6 6m-6-6l6-6" />
@@ -93,16 +93,16 @@
                 </button>
                 <div class="footer-content">
                     <span>
-                        1
+                        {{ store.pag + 1 }}
                     </span>
                     <span>
                         /
                     </span>
                     <span>
-                        2
+                        {{ store.pagTeachersAll.length }}
                     </span>
                 </div>
-                <button>
+                <button @click="store.pag + 1 == store.pagTeachersAll.length ? store.pag = 0 : store.pag += 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
                         <path fill="currentColor"
                             d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018a.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06" />
@@ -242,7 +242,8 @@
                                 <h3>
                                     Malumot
                                 </h3>
-                                <textarea v-model="edit.info" class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
+                                <textarea v-model="edit.info" class="teacher-info" name="" id="" cols="30"
+                                    rows="10"></textarea>
                             </label>
                         </div>
                         <div class="role">
@@ -283,6 +284,8 @@ const setImg = (e) => {
 
 const store = reactive({
     teacherAll: false,
+    pagTeachersAll: [],
+    pag: 0,
 });
 
 
@@ -375,7 +378,6 @@ const editTeacher = () => {
         });
 };
 
-
 const createTeacher = () => {
     const data = {
         image: getImg.value,
@@ -413,22 +415,35 @@ const createTeacher = () => {
         });
 }
 
-
 const getAllTeacher = () => {
     axios
         .get("/teachers/find-all", {
         })
         .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             store.teacherAll = res.data
             store.teacherAll.sort(function (x, y) {
                 return (x.status === y.status) ? 0 : x.status ? -1 : 1;
             });
+            console.log(store.teacherAll.length);
+            let teachers = []
+            for (let i in store.teacherAll) {
+                teachers.push(store.teacherAll[i])
+                if (teachers.length == 5) {
+                    store.pagTeachersAll.push(teachers)
+                    teachers = []
+                }
+                if ((Number(i) + 1) == store.teacherAll.length && (store.pagTeachersAll.length == 0 || teachers.length > 0)) {
+                    console.log("mane");
+                    store.pagTeachersAll.push(teachers)
+                    teachers = []
+                }
+            }
             // console.log(store.teacherAll);
+            console.log(store.pagTeachersAll);
         })
         .catch((error) => {
             store.error = true;
-            store.teacherAll = error.message;
         });
 };
 
