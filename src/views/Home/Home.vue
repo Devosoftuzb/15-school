@@ -50,7 +50,7 @@
             </div>
             <div class="new-wrapper">
                 <div class="new-card" v-for="i in store.news" :key="i.id" v-show="i.id == store.sch">
-                    <img src="https://media.huquqiyportal.uz/public/files/1696587867077.jpg" alt="">
+                    <img :src="CONFIG.API_URL + i.image" alt="">
                     <div class="new-card-content">
                         <h3>
                             {{ i.title }}
@@ -119,7 +119,7 @@
             <div class="teacher-wrapper" v-for="i in store.teachers" :key="i.id">
                 <div v-if="i.status" class="teacher-wrapper">
                     <div class="teacher-foto">
-                        <img src="https://www.ms.gov/sites/default/files/2022-05/headshot-governor-tate-reeves_R.jpeg"
+                        <img :src="CONFIG.API_URL + i.image"
                             alt="foto">
                     </div>
                     <div class="teacher-bio">
@@ -187,7 +187,7 @@
                 <div v-for="i in store.teachers" :key="i.id">
                     <div class="teacher-card" v-if="!i.status">
                         <img class="teacher-img"
-                            src="https://www.ms.gov/sites/default/files/2022-05/MS_Lieutenant-Governor-Delbert-Hosemann.jpg"
+                            :src="CONFIG.API_URL + i.image"
                             alt="foto">
                         <h2 class="teacher-name">
                             {{ i.full_name }}
@@ -209,7 +209,7 @@
             </div>
             <div class="circle-wrapper">
                 <div class="circle-card" v-for="i in store.lessons" :key="i.id">
-                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg"
+                    <img :src="CONFIG.API_URL + i.image"
                         alt="foto">
                     <h3>
                         {{ i.title }}
@@ -334,6 +334,7 @@
 <script setup>
 import { onMounted, ref, reactive } from "vue";
 import axios from "@/services/axios";
+import CONFIG from "@/stores/config";
 let navig = document.getElementById("navig")
 function changeValu() {
     navig.value = "Redq"
@@ -352,9 +353,6 @@ const store = reactive({
 const getAllNewsProduct = () => {
     axios
         .get("/news/find-all", {
-            //   headers: {
-            //     Authorization: `Bearer ${localStorage.getItem("token")}`,
-            //   },
         })
         .then((res) => {
             console.log(res.data);
@@ -363,28 +361,24 @@ const getAllNewsProduct = () => {
             store.error = false;
         })
         .catch((error) => {
-            notification.warning(error.message);
             store.error = true;
-            store.allProducts = error.message;
         });
 };
 
 const getAllTeachersProduct = () => {
     axios
         .get("/teachers/find-all", {
-            //   headers: {
-            //     Authorization: `Bearer ${localStorage.getItem("token")}`,
-            //   },
         })
         .then((res) => {
             console.log(res.data);
             store.teachers = res.data
+            store.teachers.sort(function (x, y) {
+                return (x.status === y.status) ? 0 : y.status ? -1 : 1;
+            });
             store.error = false;
         })
         .catch((error) => {
-            notification.warning(error.message);
             store.error = true;
-            store.allProducts = error.message;
         });
 };
 
@@ -392,9 +386,6 @@ const getAllTeachersProduct = () => {
 const getAllLessonsProduct = () => {
     axios
         .get("/lessons/find-all", {
-            //   headers: {
-            //     Authorization: `Bearer ${localStorage.getItem("token")}`,
-            //   },
         })
         .then((res) => {
             console.log(res.data);
@@ -402,9 +393,7 @@ const getAllLessonsProduct = () => {
             store.error = false;
         })
         .catch((error) => {
-            notification.warning(error.message);
             store.error = true;
-            store.allProducts = error.message;
         });
 };
 
@@ -412,9 +401,6 @@ const getAllLessonsProduct = () => {
 const getAllPartnershipsProduct = () => {
     axios
         .get("/partnerships/find-all", {
-            //   headers: {
-            //     Authorization: `Bearer ${localStorage.getItem("token")}`,
-            //   },
         })
         .then((res) => {
             console.log(res.data);
@@ -422,9 +408,7 @@ const getAllPartnershipsProduct = () => {
             store.error = false;
         })
         .catch((error) => {
-            notification.warning(error.message);
             store.error = true;
-            store.allProducts = error.message;
         });
 };
 

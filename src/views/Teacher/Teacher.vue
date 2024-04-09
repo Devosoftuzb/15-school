@@ -25,7 +25,7 @@
                     <div class="techer2-card" v-for="i in store.allProducts" :key="i.id">
                         <div class="card-wrapper">
                             <div class="card-wrapper-foto">
-                                <img src="https://www.ms.gov/sites/default/files/2022-05/MS_Lieutenant-Governor-Delbert-Hosemann.jpg"
+                                <img :src="CONFIG.API_URL + i.image"
                                     alt="">
                             </div>
                             <div class="card-content">
@@ -82,6 +82,7 @@
 <script setup>
 import { onMounted, ref, reactive } from "vue";
 import axios from "@/services/axios";
+import CONFIG from "@/stores/config";
 
 const store = reactive({
     allProducts: false,
