@@ -43,9 +43,9 @@
                         </tr>
                     </thead>
                     <tbody v-for="i in store.teacherAll" :key="i.id">
-                        <tr v-if="!i.status">
+                        <tr>
                             <td>
-                                <img :src="i.image" alt="">
+                                <img :src="CONFIG.API_URL + i.image" alt="">
                             </td>
                             <td>
                                 <h3>
@@ -70,12 +70,12 @@
                                             d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z" />
                                     </svg>
                                 </button>
-                                <button class="change-btn" @click="openModalChange">
-                                    <svg  class="change" xmlns="http://www.w3.org/2000/svg"
-                                    width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path fill="currentColor"
-                                        d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z" />
-                                </svg>
+                                <button  class="change-btn" @click="getOneTeacher(i.id)">
+                                    <svg class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                        viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z" />
+                                    </svg>
                                 </button>
                             </td>
                         </tr>
@@ -102,7 +102,7 @@
                         2
                     </span>
                 </div>
-                <button >
+                <button>
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
                         <path fill="currentColor"
                             d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018a.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06" />
@@ -166,14 +166,15 @@
                                 <h3>
                                     Malumot
                                 </h3>
-                                <textarea class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
+                                <textarea v-model="teacher.info" class="teacher-info" name="" id="" cols="30"
+                                    rows="10"></textarea>
                             </label>
                         </div>
                         <div class="role">
                             <h3>
                                 Role:
                             </h3>
-                            <input type="checkbox" name="" id="">
+                            <input v-model="teacher.status" type="checkbox" name="" id="">
                         </div>
                         <div class="modal-footer">
                             <button class="submitBtn" type="submit">
@@ -202,19 +203,19 @@
                     </button>
                 </div>
                 <div class="change-main">
-                    <form>
+                    <form @submit.prevent="editTeacher">
                         <div class="form-grid">
                             <label for="fio">
                                 <h3>
                                     F.I.O
                                 </h3>
-                                <input required id="fio" type="text">
+                                <input v-model="edit.full_name" required id="fio" type="text">
                             </label>
                             <label for="lavozim">
                                 <h3>
                                     Lavozim
                                 </h3>
-                                <input required id="lavozim" type="text">
+                                <input v-model="edit.profession" required id="lavozim" type="text">
                             </label>
                         </div>
                         <div class="form-grid">
@@ -222,7 +223,7 @@
                                 <h3>
                                     Telefon raqam
                                 </h3>
-                                <input class="inp-number" required id="raqam" type="number">
+                                <input v-model="edit.number" class="inp-number" required id="raqam" type="number">
                             </label>
                             <div class="modal-foto">
                                 <h3>
@@ -232,7 +233,7 @@
                                     <span>
                                         Rasm tanglang
                                     </span>
-                                    <input type="file">
+                                    <input @change="(e) => setImg(e)" type="file">
                                 </label>
                             </div>
                         </div>
@@ -241,18 +242,18 @@
                                 <h3>
                                     Malumot
                                 </h3>
-                                <textarea class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
+                                <textarea v-model="edit.info" class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
                             </label>
                         </div>
                         <div class="role">
                             <h3>
                                 Role:
                             </h3>
-                            <input type="checkbox" name="" id="">
+                            <input v-model="edit.status" type="checkbox" name="" id="">
                         </div>
                         <div class="modal-footer">
-                            <button class="submitBtn" ype="submit">
-                                Hodim qoshish
+                            <button class="submitBtn" type="submit">
+                                Hodim o'zgartirish
                             </button>
                         </div>
                     </form>
@@ -267,6 +268,7 @@ import HeaderAdmin from '../../components/HeaderAdmin.vue'
 import Saidbar from '@/components/Saidbar.vue';
 import { ref, reactive, onMounted } from 'vue';
 import axios from '@/services/axios'
+import CONFIG from '../../stores/config'
 const modal = ref(false)
 const oppenModal = () => (modal.value = !modal.value)
 
@@ -283,13 +285,24 @@ const store = reactive({
     teacherAll: false,
 });
 
+
+
 const teacher = reactive({
     full_name: "",
     profession: "",
-    info: "lorem",
+    info: "",
     number: "",
     status: false
 })
+
+const edit = reactive({
+    id: 0,
+    full_name: "",
+    profession: "",
+    info: "",
+    number: "",
+    status: false
+});
 
 
 const deleteTeacher = (id) => {
@@ -300,7 +313,7 @@ const deleteTeacher = (id) => {
             },
         })
         .then((res) => {
-            console.log(res)
+            // console.log(res)
             getAllTeacher()
         })
         .catch((error) => {
@@ -308,9 +321,62 @@ const deleteTeacher = (id) => {
         });
 }
 
+const getOneTeacher = (id) => {
+    axios
+        .get(`/teachers/find/${id}`, {
+        })
+        .then((res) => {
+            getImg.value = res.data.image
+            edit.full_name = res.data.full_name;
+            edit.profession = res.data.profession
+            edit.info = res.data.info
+            edit.number = res.data.number
+            edit.status = res.data.status
+            edit.id = res.data.id;
+            openChange.value = true;
+        })
+        .catch((error) => {
+            console.log("error", error);
+        });
+};
+
+const editTeacher = () => {
+    const data = {
+        image: getImg.value,
+        full_name: edit.full_name,
+        profession: edit.profession,
+        info: edit.info,
+        number: edit.number,
+        status: edit.status
+    };
+
+    const formData = new FormData();
+    for (let i of Object.keys(data)) {
+        formData.append(i, data[i]);
+    }
+
+    axios
+        .put(`/teachers/update/${edit.id}`, formData, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+        })
+        .then((res) => {
+            edit.id = 0
+            edit.full_name = ""
+            edit.profession = ""
+            edit.info = ""
+            edit.number = ""
+            edit.status = false
+            getAllTeacher()
+        })
+        .catch((error) => {
+            console.log("error", error);
+        });
+};
+
 
 const createTeacher = () => {
-    // const img = ref(getImg.value)
     const data = {
         image: getImg.value,
         full_name: teacher.full_name,
@@ -322,7 +388,7 @@ const createTeacher = () => {
 
     const formData = new FormData();
     for (let i of Object.keys(data)) {
-      formData.append(i, data[i]);
+        formData.append(i, data[i]);
     }
 
 
@@ -336,9 +402,10 @@ const createTeacher = () => {
             console.log(res)
             teacher.full_name = "";
             teacher.profession = "";
-            teacher.info = "lorem";
+            teacher.info = "";
             teacher.number = "";
             teacher.status = false;
+            modal.value = false
             getAllTeacher()
         })
         .catch((error) => {
@@ -354,7 +421,10 @@ const getAllTeacher = () => {
         .then((res) => {
             console.log(res.data);
             store.teacherAll = res.data
-            store.error = false;
+            store.teacherAll.sort(function (x, y) {
+                return (x.status === y.status) ? 0 : x.status ? -1 : 1;
+            });
+            // console.log(store.teacherAll);
         })
         .catch((error) => {
             store.error = true;
@@ -522,7 +592,7 @@ footer button:hover {
     border-radius: 30px;
     z-index: 10;
     /* margin-left: 400px; */
-    
+
 }
 
 #openModal {
@@ -686,26 +756,31 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: transparent;
     color: #624BFF;
 }
-.teacher-info{
-    resize: none; 
-    overflow: hidden; 
-    width: 100%; 
-    height: 100px; 
+
+.teacher-info {
+    resize: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
     padding: 10px;
 }
-.role input{
+
+.role input {
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
-.role{
+
+.role {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-.necessary{
+
+.necessary {
     margin-bottom: 15px;
 }
+
 @media(max-width:1000px) {
     .Ustozlar {
         margin-left: 0;
