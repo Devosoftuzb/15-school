@@ -45,7 +45,7 @@
                     <tbody v-for="i in store.teacherAll" :key="i.id">
                         <tr v-if="!i.status">
                             <td>
-                                <img :src="CONFIG.API_URL + i.image" alt="O'qituvchi rasmi">
+                                <img :src="i.image" alt="">
                             </td>
                             <td>
                                 <h3>
@@ -63,18 +63,20 @@
                                 </h3>
                             </td>
                             <td>
-                                <button @click="deleteTeacher(i.id)">
+                                <button class="delete-btn" @click="deleteTeacher(i.id)">
                                     <svg class="delate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                         viewBox="0 0 24 24">
                                         <path fill="currentColor"
                                             d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z" />
                                     </svg>
                                 </button>
-                                <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg"
+                                <button class="change-btn" @click="openModalChange">
+                                    <svg  class="change" xmlns="http://www.w3.org/2000/svg"
                                     width="1em" height="1em" viewBox="0 0 24 24">
                                     <path fill="currentColor"
                                         d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z" />
                                 </svg>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -100,7 +102,7 @@
                         2
                     </span>
                 </div>
-                <button>
+                <button >
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
                         <path fill="currentColor"
                             d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018a.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06" />
@@ -158,6 +160,20 @@
                                     <input type="file" @change="(e) => setImg(e)">
                                 </label>
                             </div>
+                        </div>
+                        <div class="form-grid necessary">
+                            <label for="raqam">
+                                <h3>
+                                    Malumot
+                                </h3>
+                                <textarea class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
+                            </label>
+                        </div>
+                        <div class="role">
+                            <h3>
+                                Role:
+                            </h3>
+                            <input type="checkbox" name="" id="">
                         </div>
                         <div class="modal-footer">
                             <button class="submitBtn" type="submit">
@@ -220,6 +236,20 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="form-grid necessary">
+                            <label for="raqam">
+                                <h3>
+                                    Malumot
+                                </h3>
+                                <textarea class="teacher-info" name="" id="" cols="30" rows="10"></textarea>
+                            </label>
+                        </div>
+                        <div class="role">
+                            <h3>
+                                Role:
+                            </h3>
+                            <input type="checkbox" name="" id="">
+                        </div>
                         <div class="modal-footer">
                             <button class="submitBtn" ype="submit">
                                 Hodim qoshish
@@ -237,7 +267,6 @@ import HeaderAdmin from '../../components/HeaderAdmin.vue'
 import Saidbar from '@/components/Saidbar.vue';
 import { ref, reactive, onMounted } from 'vue';
 import axios from '@/services/axios'
-import CONFIG from '../../stores/config'
 const modal = ref(false)
 const oppenModal = () => (modal.value = !modal.value)
 
@@ -246,7 +275,7 @@ const openModalChange = () => (openChange.value = !openChange.value)
 
 const getImg = ref(null);
 const setImg = (e) => {
-    getImg.value = e.target.files.item(0);
+    getImg.value = e.target.files[0];
     console.log(getImg.value);
 };
 
@@ -263,6 +292,23 @@ const teacher = reactive({
 })
 
 
+const deleteTeacher = (id) => {
+    axios
+        .delete(`/teachers/delete/${id}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+        })
+        .then((res) => {
+            console.log(res)
+            getAllTeacher()
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+
 const createTeacher = () => {
     // const img = ref(getImg.value)
     const data = {
@@ -271,7 +317,7 @@ const createTeacher = () => {
         profession: teacher.profession,
         info: teacher.info,
         number: String(teacher.number),
-        status: false
+        status: teacher.status
     };
 
     const formData = new FormData();
@@ -281,10 +327,9 @@ const createTeacher = () => {
 
 
     axios
-        .post("teachers/create", formData, {
+        .post("/teachers/create", formData, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
-                'Content-Type': 'multipart/form-data'
             },
         })
         .then((res) => {
@@ -301,25 +346,10 @@ const createTeacher = () => {
         });
 }
 
-const deleteTeacher = (id) => {
-    axios
-        .delete(`teachers/delete/${id}`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-        })
-        .then((res) => {
-            console.log(res)
-            getAllTeacher()
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-}
 
 const getAllTeacher = () => {
     axios
-        .get("teachers/find-all", {
+        .get("/teachers/find-all", {
         })
         .then((res) => {
             console.log(res.data);
@@ -487,11 +517,12 @@ footer button:hover {
     width: 50%;
     background-color: white;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 28%;
     border-radius: 30px;
     z-index: 10;
     /* margin-left: 400px; */
+    
 }
 
 #openModal {
@@ -507,7 +538,7 @@ footer button:hover {
     top: 0;
     left: 0;
     right: 0;
-    bottom: -330px;
+    bottom: -530px;
     background-color: rgba(0, 0, 0, 0.692);
     display: none;
 }
@@ -517,7 +548,7 @@ footer button:hover {
     width: 50%;
     background-color: white;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 28%;
     border-radius: 30px;
     z-index: 10;
@@ -655,7 +686,26 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: transparent;
     color: #624BFF;
 }
-
+.teacher-info{
+    resize: none; 
+    overflow: hidden; 
+    width: 100%; 
+    height: 100px; 
+    padding: 10px;
+}
+.role input{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.role{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.necessary{
+    margin-bottom: 15px;
+}
 @media(max-width:1000px) {
     .Ustozlar {
         margin-left: 0;
