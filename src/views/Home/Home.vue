@@ -49,7 +49,7 @@
                 <router-link to="/yangilik"><button>Barcha yangiliklar</button></router-link>
             </div>
             <div class="new-wrapper">
-                <div class="new-card" v-for="i in store.news" :key="i.id" v-show="i.id == store.sch">
+                <div class="new-card" v-for="i in store.news" :key="i.id">
                     <img :src="CONFIG.API_URL + i.image" alt="">
                     <div class="new-card-content">
                         <h3>
@@ -83,15 +83,13 @@
                     </div>
                 </div>
                 <div class="new-cursor">
-                    <div class="left-cursor" @click="store.sch -= 1"
-                        v-if="store.sch < 1 ? store.sch = store.length : store.sch">
+                    <div class="left-cursor" @click="store.sch == 0 ? store.sch = store.length - 1  : store.sch -= 1">
                         <svg class="right" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                             viewBox="0 0 15 15">
                             <path fill="none" stroke="currentColor" stroke-linecap="square" d="M10 14L3 7.5L10 1" />
                         </svg>
                     </div>
-                    <div class="right-cursor" @click="store.sch += 1"
-                        v-if="store.sch > store.length ? store.sch = 1 : store.sch">
+                    <div class="right-cursor" @click="store.sch == store.length - 1 ? store.sch = 0 : store.sch += 1">
                         <svg class="left" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                             viewBox="0 0 15 15">
                             <path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1" />
@@ -345,7 +343,7 @@ const store = reactive({
     teachers: false,
     lessons: false,
     partnerships: false,
-    sch: 1,
+    sch: 0,
     length: 0
 });
 
@@ -370,7 +368,6 @@ const getAllTeachersProduct = () => {
         .get("/teachers/find-all", {
         })
         .then((res) => {
-            console.log(res.data);
             store.teachers = res.data
             store.teachers.sort(function (x, y) {
                 return (x.status === y.status) ? 0 : y.status ? -1 : 1;
@@ -388,7 +385,6 @@ const getAllLessonsProduct = () => {
         .get("/lessons/find-all", {
         })
         .then((res) => {
-            console.log(res.data);
             store.lessons = res.data
             store.error = false;
         })
@@ -403,7 +399,6 @@ const getAllPartnershipsProduct = () => {
         .get("/partnerships/find-all", {
         })
         .then((res) => {
-            console.log(res.data);
             store.partnerships = res.data
             store.error = false;
         })
