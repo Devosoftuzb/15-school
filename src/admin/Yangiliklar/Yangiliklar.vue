@@ -251,7 +251,6 @@ const deleteNews = (id) => {
             },
         })
         .then((res) => {
-            // console.log(res)
             getAllNews()
             location.reload()
         })
@@ -326,7 +325,6 @@ const createNews = () => {
             },
         })
         .then((res) => {
-            console.log(res)
             news.title = "";
             news.body = "";
             modal.value = false
@@ -343,11 +341,8 @@ const getAllNews = () => {
         .get("/news/find-all", {
         })
         .then((res) => {
-            // console.log(res.data);
             store.newsAll = res.data
-            store.newsAll.sort(function (x, y) {
-                return (x.status === y.status) ? 0 : x.status ? -1 : 1;
-            });
+            store.newsAll = store.newsAll.reverse()
             let news = []
             for (let i in store.newsAll) {
                 news.push(store.newsAll[i])
@@ -356,7 +351,6 @@ const getAllNews = () => {
                     news = []
                 }
                 if ((Number(i) + 1) == store.newsAll.length && (store.pagNewsAll.length == 0 || news.length > 0)) {
-                    console.log("mane");
                     store.pagNewsAll.push(news)
                     news = []
                 }

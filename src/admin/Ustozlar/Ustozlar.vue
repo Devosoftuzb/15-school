@@ -316,7 +316,6 @@ const deleteTeacher = (id) => {
             },
         })
         .then((res) => {
-            // console.log(res)
             getAllTeacher()
             location.reload()
         })
@@ -403,7 +402,6 @@ const createTeacher = () => {
             },
         })
         .then((res) => {
-            console.log(res)
             teacher.full_name = "";
             teacher.profession = "";
             teacher.info = "";
@@ -423,12 +421,11 @@ const getAllTeacher = () => {
         .get("/teachers/find-all", {
         })
         .then((res) => {
-            // console.log(res.data);
             store.teacherAll = res.data
+            store.teacherAll = store.teacherAll.reverse()
             store.teacherAll.sort(function (x, y) {
                 return (x.status === y.status) ? 0 : x.status ? -1 : 1;
             });
-            console.log(store.teacherAll.length);
             let teachers = []
             for (let i in store.teacherAll) {
                 teachers.push(store.teacherAll[i])
@@ -437,13 +434,10 @@ const getAllTeacher = () => {
                     teachers = []
                 }
                 if ((Number(i) + 1) == store.teacherAll.length && (store.pagTeachersAll.length == 0 || teachers.length > 0)) {
-                    console.log("mane");
                     store.pagTeachersAll.push(teachers)
                     teachers = []
                 }
             }
-            // console.log(store.teacherAll);
-            console.log(store.pagTeachersAll);
         })
         .catch((error) => {
             store.error = true;
