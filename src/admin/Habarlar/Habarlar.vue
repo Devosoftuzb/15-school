@@ -30,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="i in store.allProducts" :key="i.id">
+                        <tr v-for="i in store.pagContactAll[store.pag]" :key="i.id">
                             <td class="yangilik-foto">
                                 <h3>
                                     {{ i.phone }}
@@ -49,9 +49,6 @@
                                             d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z" />
                                     </svg>
                                 </button>
-                                <button class="change-btn">
-                                    <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
-                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -60,7 +57,7 @@
         </main>
         <footer>
             <div class="footer-wrapper">
-                <button>
+                <button @click="store.pag == 0 ? store.pag = store.pagContactAll.length - 1  : store.pag -= 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="2" d="M5 12h14M5 12l6 6m-6-6l6-6" />
@@ -68,16 +65,16 @@
                 </button>
                 <div class="footer-content">
                     <span>
-                        1
+                        {{ store.pagContactAll.length == 0 ? store.pag : store.pag + 1 }}
                     </span>
                     <span>
                         /
                     </span>
                     <span>
-                        2
+                        {{ store.pagContactAll.length }}
                     </span>
                 </div>
-                <button>
+                <button @click="store.pag + 1 == store.pagContactAll.length ? store.pag = 0 : store.pag += 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
                         <path fill="currentColor"
                             d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018a.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06" />
@@ -85,142 +82,43 @@
                 </button>
             </div>
         </footer>
-        <div :id="modal ? 'openModal' : ''" class="create-modal-bg">
-
-            <div class="create-modal">
-                <div class="create-modal-header">
-                    <h1>
-                        Togarak qoshish
-                    </h1>
-                    <button @click="oppenModal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14">
-                            <path fill="currentColor" fill-rule="evenodd"
-                                d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="create-modal-main">
-                    <form>
-                        <div class="form-grid">
-                            <label for="fio">
-                                <h3>
-                                    Nomi
-                                </h3>
-                                <input required id="fio" type="text">
-                            </label>
-                            <div class="modal-foto">
-                                <h3>
-                                    Rasm qoish
-                                </h3>
-                                <label class="file-input-container" for="foto">
-                                    <span>
-                                        Rasm tanglang
-                                    </span>
-                                    <input type="file">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-grid">
-                            <label class="yangilik_text" for="data">
-                                <h3>
-                                    Hafta kunlari
-                                </h3>
-                                <input required id="data" type="text">
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="submitBtn" ype="submit">
-                                Togarak qoshish
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-
-        </div>
-        <div :id="openChange ? 'openChange' : ''" class="modal-change">
-            <div class="change-modal">
-                <div class="change-header">
-                    <h1>
-                        Togarak o`zgartirish
-                    </h1>
-                    <button @click="openModalChange">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14">
-                            <path fill="currentColor" fill-rule="evenodd"
-                                d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="change-main">
-                    <form>
-                        <div class="form-grid">
-                            <label for="fio">
-                                <h3>
-                                    Nomi
-                                </h3>
-                                <input required id="fio" type="text">
-                            </label>
-                            <div class="modal-foto">
-                                <h3>
-                                    Rasm qoish
-                                </h3>
-                                <label class="file-input-container" for="foto">
-                                    <span>
-                                        Rasm tanglang
-                                    </span>
-                                    <input type="file">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-grid">
-                            <label class="yangilik_text" for="data">
-                                <h3>
-                                    Hafta kunlari
-                                </h3>
-                                <input required id="data" type="text">
-                            </label>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="submitBtn" ype="submit">
-                                Togarak o`zgartirish
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 </template>
 
 <script setup>
 import HeaderAdmin from '../../components/HeaderAdmin.vue'
 import Saidbar from '@/components/Saidbar.vue';
-import { onMounted, ref, reactive } from "vue";
+import { onMounted, reactive } from "vue";
 import axios from "@/services/axios";
-const modal = ref(false)
-const oppenModal = () => (modal.value = !modal.value)
-
-const openChange = ref(false)
-const openModalChange = () => (openChange.value = !openChange.value)
 
 const store = reactive({
-    allProducts: false,
+    contactAll: false,
+    pagContactAll: [],
+    pag: 0,
 });
 
-const getAllProduct = () => {
+const getAllContact = () => {
     axios
         .get("/contact/find-all", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+            }
         })
         .then((res) => {
-            console.log(res.data);
-            store.allProducts = res.data
-            store.error = false;
+            store.contactAll = res.data
+            store.contactAll = store.contactAll.reverse()
+            let contact = []
+            for (let i in store.contactAll) {
+                contact.push(store.contactAll[i])
+                if (contact.length == 5) {
+                    store.pagContactAll.push(contact)
+                    contact = []
+                }
+                if ((Number(i) + 1) == store.contactAll.length && (store.pagContactAll.length == 0 || contact.length > 0)) {
+                    store.pagContactAll.push(contact)
+                    contact = []
+                }
+            }
         })
         .catch((error) => {
             store.error = true;
@@ -235,8 +133,8 @@ const deleteContact = (id) => {
             },
         })
         .then((res) => {
-            console.log(res)
-            getAllProduct()
+            getAllContact()
+            location.reload()
         })
         .catch((error) => {
             console.log(error);
@@ -244,7 +142,7 @@ const deleteContact = (id) => {
 }
 
 onMounted(() => {
-    getAllProduct();
+    getAllContact();
 });
 </script>
 
