@@ -1,7 +1,7 @@
 <template>
-    <Saidbar/>
+    <Saidbar />
     <div class="Ustozlar">
-        <HeaderAdmin/>
+        <HeaderAdmin />
         <header class="header-bottom">
             <h1>
                 Yangiliklar
@@ -13,284 +13,478 @@
         <main>
             <div class="cont">
                 <table>
-                <thead>
-                    <tr>
-                        <td>
-                            <h3>
-                            Rasm
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                               Nomi
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Malumot
-                            </h3>
-                        </td>
-                        <td>
-                            <h3>
-                                Sozlama
-                            </h3>
-                        </td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="yangilik-foto">
-                            <img src="https://media.huquqiyportal.uz/public/files/1696587867077.jpg" alt="foto">
-                        </td>
-                        <td>
-                            <h3>
-                                Loremdan Yangilik
-                            </h3>
-                        </td>
-                        <td class="yangilik-grid">
-                            <p class="yangilik-text">
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae nostrum nemo, amet tempore facilis reprehenderit voluptates, dolorem labore ullam nulla ipsum optio architecto eveniet nesciunt magni odit sequi blanditiis enim!
-                            </p>
-                        </td>
-                        <td>
-                            <button class="delete-btn">
-                                <svg class="delate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z"/></svg>
-                            </button>
-                           <button class="change-btn">
-                            <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
-                           </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <thead>
+                        <tr>
+                            <td>
+                                <h3>
+                                    Rasm
+                                </h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    Nomi
+                                </h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    Malumot
+                                </h3>
+                            </td>
+                            <td>
+                                <h3>
+                                    Sozlama
+                                </h3>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody v-for="i in store.pagNewsAll[store.pag]" :key="i.id">
+                        <tr>
+                            <td class="yangilik-foto">
+                                <img :src="CONFIG.API_URL + i.image" alt="foto">
+                            </td>
+                            <td>
+                                <h3>
+                                    {{ i.title }}
+                                </h3>
+                            </td>
+                            <td class="yangilik-grid">
+                                <p class="yangilik-text">
+                                    {{ i.body }}
+                                </p>
+                            </td>
+                            <td>
+                                <button @click="deleteNews(i.id)" class="delete-btn">
+                                    <svg class="delate" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                        viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z" />
+                                    </svg>
+                                </button>
+                                <button @click="getOneNews(i.id)" class="change-btn">
+                                    <svg @click="openModalChange" class="change" xmlns="http://www.w3.org/2000/svg"
+                                        width="1em" height="1em" viewBox="0 0 24 24">
+                                        <path fill="currentColor"
+                                            d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z" />
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
         <footer>
             <div class="footer-wrapper">
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l6 6m-6-6l6-6"/></svg>
+                <button @click="store.pag == 0 ? store.pag = store.pagNewsAll.length - 1  : store.pag -= 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M5 12h14M5 12l6 6m-6-6l6-6" />
+                    </svg>
                 </button>
                 <div class="footer-content">
                     <span>
-                        1
+                        {{ store.pag + 1 }}
                     </span>
                     <span>
-                    /
+                        /
                     </span>
                     <span>
-                        2
+                        {{ store.pagNewsAll.length }}
                     </span>
                 </div>
-                <button>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018a.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06"/></svg>
+                <button @click="store.pag + 1 == store.pagNewsAll.length ? store.pag = 0 : store.pag += 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                        <path fill="currentColor"
+                            d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018a.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06" />
+                    </svg>
                 </button>
             </div>
         </footer>
-        <div :id="modal ? 'openModal' : '' "  class="create-modal-bg">
-
-        <div class="create-modal">
-            <div class="create-modal-header">
-                <h1>
-                    Yangilik qoshish
-                </h1>
-                <button @click="oppenModal">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z" clip-rule="evenodd"/></svg>
-                </button>
-            </div>
-            <div class="create-modal-main">
-                <form>
-                    <div class="form-grid">
-                        <label for="fio">
-                            <h3>
-                               Nomi
-                            </h3>
-                            <input required id="fio" type="text">
-                        </label>
-                        <div class="modal-foto">
-                            <h3>
-                                Rasm qoish
-                            </h3>
-                            <label class="file-input-container" for="foto">
-                                <span>
-                                    Rasm tanglang
-                                </span>
-                                <input type="file">
-                            </label> 
-                        </div>
-                    </div>
-                    <div class="form-grid">
-                        <label class="yangilik_text" for="raqam">
-                            <h3>
-                                Yangilik Malumoti
-                            </h3>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                        </label>
-                    </div>
-                    <div class="modal-footer">
-                    <button class="submitBtn"ype="submit">
+        <div :id="modal ? 'openModal' : ''" class="create-modal-bg">
+            <div class="create-modal">
+                <div class="create-modal-header">
+                    <h1>
                         Yangilik qoshish
+                    </h1>
+                    <button @click="oppenModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z"
+                                clip-rule="evenodd" />
+                        </svg>
                     </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-   
-   
-        </div>
-        <div :id="openChange ? 'openChange' : '' " class="modal-change">
-        <div class="change-modal">
-            <div class="change-header">
-                <h1>
-                    Yangilik o`zgartirish
-                </h1>
-                <button @click="openModalChange">
-                    <svg  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z" clip-rule="evenodd"/></svg>
-                </button>
-            </div>
-            <div class="change-main">
-                <form>
-                    <div class="form-grid">
-                        <label for="fio">
-                            <h3>
-                               Nomi
-                            </h3>
-                            <input required id="fio" type="text">
-                        </label>
-                        <div class="modal-foto">
-                            <h3>
-                                Rasm qoish
-                            </h3>
-                            <label class="file-input-container" for="foto">
-                                <span>
-                                    Rasm tanglang
-                                </span>
-                                <input type="file">
-                            </label> 
+                </div>
+                <div class="create-modal-main">
+                    <form @submit.prevent="createNews">
+                        <div class="form-grid">
+                            <label for="fio">
+                                <h3>
+                                    Nomi
+                                </h3>
+                                <input v-model="news.title" required id="fio" type="text">
+                            </label>
+                            <div class="modal-foto">
+                                <h3>
+                                    Rasm qoish
+                                </h3>
+                                <label class="file-input-container" for="foto">
+                                    <span>
+                                        Rasm tanglang
+                                    </span>
+                                    <input @change="(e) => setImg(e)" type="file">
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-grid">
-                        <label class="yangilik_text" for="raqam">
-                            <h3>
-                                Yangilik Malumoti
-                            </h3>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                        </label>
-                    </div>
-                    <div class="modal-footer">
-                    <button class="submitBtn"ype="submit">
-                        Yangilik ozgartirish
-                    </button>
-                    </div>
-                </form>
+                        <div class="form-grid">
+                            <label class="yangilik_text" for="raqam">
+                                <h3>
+                                    Yangilik Malumoti
+                                </h3>
+                                <textarea v-model="news.body" name="" id="" cols="30" rows="10"></textarea>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="submitBtn" type="submit">
+                                Yangilik qoshish
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+        <div :id="openChange ? 'openChange' : ''" class="modal-change">
+            <div class="change-modal">
+                <div class="change-header">
+                    <h1>
+                        Yangilik o`zgartirish
+                    </h1>
+                    <button @click="openModalChange">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7L.293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="change-main">
+                    <form @submit.prevent="editNews">
+                        <div class="form-grid">
+                            <label for="fio">
+                                <h3>
+                                    Nomi
+                                </h3>
+                                <input v-model="edit.title" required id="fio" type="text">
+                            </label>
+                            <div class="modal-foto">
+                                <h3>
+                                    Rasm qoish
+                                </h3>
+                                <label class="file-input-container" for="foto">
+                                    <span>
+                                        Rasm tanglang
+                                    </span>
+                                    <input @change="(e) => setImg(e)" type="file">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <label class="yangilik_text" for="raqam">
+                                <h3>
+                                    Yangilik Malumoti
+                                </h3>
+                                <textarea v-model="edit.body" name="" id="" cols="30" rows="10"></textarea>
+                            </label>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="submitBtn" type="submit">
+                                Yangilik ozgartirish
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup>
 import HeaderAdmin from '../../components/HeaderAdmin.vue'
 import Saidbar from '@/components/Saidbar.vue';
-import { ref } from 'vue';
-    const modal = ref(false)
-    const oppenModal = () => (modal.value = !modal.value)
+import { ref, reactive, onMounted } from 'vue';
+import axios from '@/services/axios'
+import CONFIG from '../../stores/config'
+const modal = ref(false)
+const oppenModal = () => (modal.value = !modal.value)
 
-    const openChange = ref(false)
-    const openModalChange = () =>(openChange.value = !openChange.value)
+const openChange = ref(false)
+const openModalChange = () => (openChange.value = !openChange.value)
+
+const getImg = ref(null);
+const setImg = (e) => {
+    getImg.value = e.target.files[0];
+    console.log(getImg.value);
+};
+
+const store = reactive({
+    newsAll: false,
+    pagNewsAll: [],
+    pag: 0,
+});
+
+const news = reactive({
+    title: "",
+    body: "",
+})
+
+const edit = reactive({
+    id: 0,
+    title: "",
+    body: "",
+});
+
+
+const deleteNews = (id) => {
+    axios
+        .delete(`/news/delete/${id}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+        })
+        .then((res) => {
+            // console.log(res)
+            getAllNews()
+            location.reload()
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+const getOneNews = (id) => {
+    axios
+        .get(`/news/find/${id}`, {
+        })
+        .then((res) => {
+            getImg.value = res.data.image
+            edit.title = res.data.title;
+            edit.body = res.data.body
+            edit.id = res.data.id;
+            openChange.value = true;
+        })
+        .catch((error) => {
+            console.log("error", error);
+        });
+};
+
+const editNews = () => {
+    const data = {
+        image: getImg.value,
+        title: edit.title,
+        body: edit.body,
+    };
+
+    const formData = new FormData();
+    for (let i of Object.keys(data)) {
+        formData.append(i, data[i]);
+    }
+
+    axios
+        .put(`/news/update/${edit.id}`, formData, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+        })
+        .then((res) => {
+            edit.id = 0
+            edit.title = ""
+            edit.body = ""
+            getAllNews()
+            location.reload()
+        })
+        .catch((error) => {
+            console.log("error", error);
+        });
+};
+
+const createNews = () => {
+    const data = {
+        image: getImg.value,
+        title: news.title,
+        body: news.body,
+    };
+
+    const formData = new FormData();
+    for (let i of Object.keys(data)) {
+        formData.append(i, data[i]);
+    }
+
+
+    axios
+        .post("/news/create", formData, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+        })
+        .then((res) => {
+            console.log(res)
+            news.title = "";
+            news.body = "";
+            modal.value = false
+            getAllNews()
+            location.reload()
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+const getAllNews = () => {
+    axios
+        .get("/news/find-all", {
+        })
+        .then((res) => {
+            // console.log(res.data);
+            store.newsAll = res.data
+            store.newsAll.sort(function (x, y) {
+                return (x.status === y.status) ? 0 : x.status ? -1 : 1;
+            });
+            let news = []
+            for (let i in store.newsAll) {
+                news.push(store.newsAll[i])
+                if (news.length == 5) {
+                    store.pagNewsAll.push(news)
+                    news = []
+                }
+                if ((Number(i) + 1) == store.newsAll.length && (store.pagNewsAll.length == 0 || news.length > 0)) {
+                    console.log("mane");
+                    store.pagNewsAll.push(news)
+                    news = []
+                }
+            }
+        })
+        .catch((error) => {
+            store.error = true;
+        });
+};
+
+onMounted(() => {
+    getAllNews();
+});
 </script>
 
 <style lang="css" scoped>
-.wrapper{
+.wrapper {
     display: flex;
 }
-.Ustozlar{
+
+.Ustozlar {
     margin-left: 310px;
     padding: 20px;
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
 }
-.Ustozlar h1{
+
+.Ustozlar h1 {
     color: white;
 }
-.header-bottom{
+
+.header-bottom {
     width: 100%;
     padding: 30px;
     background-color: #624BFF;
     display: flex;
     align-items: center;
-    gap:30px;
+    gap: 30px;
     margin-bottom: 20px;
 }
-.header-bottom button{
+
+.header-bottom button {
     padding: 10px 10px;
     border: solid 1px white;
     border-radius: 20px;
     background-color: white;
-    cursor:pointer;
+    cursor: pointer;
     font-weight: bold;
 }
-.header-bottom button:hover{
+
+.header-bottom button:hover {
     background-color: #624BFF;
     color: white;
 }
-.cont{
+
+.cont {
     padding: 20px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px black;
     background-color: rgb(236, 236, 236)
 }
-main{
+
+main {
     padding: 10px;
-   }
-table,thead,tr{
-    width:100%;
 }
-table thead tr td{
+
+table,
+thead,
+tr {
+    width: 100%;
+}
+
+table thead tr td {
     text-align: center;
-    padding:20px;
-    padding-top:0;
-    padding-bottom:0;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
+
 table tbody td {
     text-align: center;
-    padding-top:20px;
+    padding-top: 20px;
 }
-table tbody img{
-    width:200px;
-    height:100px;
-    border-radius:10px;
+
+table tbody img {
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
 }
-.yangilik-foto{
+
+.yangilik-foto {
     width: 300px;
 }
-.delate{
+
+.delate {
     font-size: 30px;
     margin-right: 10px;
     cursor: pointer;
 }
-.change{
+
+.change {
     font-size: 30px;
     cursor: pointer;
 }
-.delate:hover{
+
+.delate:hover {
     color: red;
 }
-.change:hover{
+
+.change:hover {
     color: rgb(95, 95, 95);
 }
-footer{
+
+footer {
     margin-top: 20px;
     width: 100%;
-    padding:30px;
-    background-color:#624BFF ;
+    padding: 30px;
+    background-color: #624BFF;
 }
-.footer-wrapper{
+
+.footer-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-footer button{
+
+footer button {
     padding: 5px 10px;
     font-size: 25px;
     display: flex;
@@ -300,15 +494,18 @@ footer button{
     border: 1px solid white;
     border-radius: 10px;
 }
-footer span{
-    color:white;
-    font-size:16px;
+
+footer span {
+    color: white;
+    font-size: 16px;
 }
-footer button:hover{
+
+footer button:hover {
     background-color: transparent;
-    color:white;
+    color: white;
 }
-.create-modal-bg{
+
+.create-modal-bg {
     position: absolute;
     top: 0;
     left: 0;
@@ -317,24 +514,28 @@ footer button:hover{
     background-color: rgba(0, 0, 0, 0.527);
     display: none;
 }
-.create-modal{
+
+.create-modal {
     padding: 50px;
-    width: 50%  ;
+    width: 50%;
     background-color: white;
     position: absolute;
     top: 20%;
-    left: 28%;  
+    left: 28%;
     border-radius: 30px;
     z-index: 10;
     /* margin-left: 400px; */
 }
-#openModal{
+
+#openModal {
     display: block;
 }
-#openChange{
-    display:block;
+
+#openChange {
+    display: block;
 }
-  .modal-change{
+
+.modal-change {
     position: absolute;
     top: 0;
     left: 0;
@@ -343,30 +544,37 @@ footer button:hover{
     background-color: rgba(0, 0, 0, 0.692);
     display: none;
 }
-.change-modal{
+
+.change-modal {
     padding: 50px;
-    width: 50%  ;
+    width: 50%;
     background-color: white;
     position: absolute;
     top: 20%;
-    left: 28%;  
+    left: 28%;
     border-radius: 30px;
     z-index: 10;
 }
-.create-modal-header, .change-header{
+
+.create-modal-header,
+.change-header {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 30px
 }
-.create-modal-header h1, .change-header h1{
+
+.create-modal-header h1,
+.change-header h1 {
     color: #212B36;
 }
-.create-modal-header button, .change-header button{
+
+.create-modal-header button,
+.change-header button {
     background-color: #624BFF;
     color: white;
-    padding:10px 15px;
+    padding: 10px 15px;
     border: 1px solid #624BFF;
     border-radius: 5px;
     cursor: pointer;
@@ -374,44 +582,55 @@ footer button:hover{
     align-items: center;
     justify-content: center
 }
-.create-modal-header button:hover{
+
+.create-modal-header button:hover {
     background-color: transparent;
     color: #624BFF
 }
-.change-header button:hover{
+
+.change-header button:hover {
     background-color: transparent;
     color: #624BFF
 }
-.form-grid label input{
+
+.form-grid label input {
     width: 100%;
     padding: 10px 10px;
     font-size: 15px;
 }
-.form-grid{
+
+.form-grid {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
     margin-bottom: 50px;
 }
-.inp-number{
+
+.inp-number {
     width: 100%;
     padding: 10px 10px;
     font-size: 15px;
 }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;}
-.form-grid label{
+    -webkit-appearance: none;
+}
+
+.form-grid label {
     width: 100%
 }
-.modal-foto{
+
+.modal-foto {
     width: 100%;
 }
-.file-input-container{
+
+.file-input-container {
     width: 100%;
 }
-.submitBtn{
+
+.submitBtn {
     padding: 10px 15px;
     border: 1px solid #624BFF;
     background-color: #624BFF;
@@ -419,18 +638,22 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
     border-radius: 10px
 }
-.submitBtn:hover{
+
+.submitBtn:hover {
     background-color: transparent;
     color: #624BFF
 }
-.modal-footer{
+
+.modal-footer {
     display: flex;
     align-items: center;
     justify-content: end;
 }
-.modal-footer{
+
+.modal-footer {
     position: relative;
 }
+
 .file-input-container {
     position: relative;
     overflow: hidden;
@@ -442,7 +665,8 @@ input[type=number]::-webkit-outer-spin-button {
     cursor: pointer;
     color: white;
     width: 300px;
-  }
+}
+
 .file-input-container input[type=file] {
     cursor: pointer;
     position: absolute;
@@ -451,71 +675,84 @@ input[type=number]::-webkit-outer-spin-button {
     right: 0;
     top: 0;
     cursor: pointer;
-  }
-  .file-input-container span{
+}
+
+.file-input-container span {
     display: block;
     text-align: center;
     cursor: pointer;
     font-size: 20px;
-  }
-  .file-input-container:hover{
+}
+
+.file-input-container:hover {
     background-color: transparent;
     color: #624BFF;
-  }
-.yangilik-text{
+}
+
+.yangilik-text {
     width: 400px
-  }
-  .yangilik-grid{
+}
+
+.yangilik-grid {
     width: 400px;
-  }
-  .yangilik_text textarea{
-    resize: none; 
-    overflow: hidden; 
-    width: 100%; 
-    height: 100px; 
+}
+
+.yangilik_text textarea {
+    resize: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
     padding: 10px;
-  }
-  @media(max-width:1000px){
-    .Ustozlar{
+}
+
+@media(max-width:1000px) {
+    .Ustozlar {
         margin-left: 0;
     }
-    .form-grid{
+
+    .form-grid {
         flex-direction: column;
         gap: 30px;
     }
-  }
-  @media(max-width:900px){
+}
+
+@media(max-width:900px) {
     .cont {
         overflow: auto;
         overflow-x: scroll;
     }
-    .cont table{
+
+    .cont table {
         width: 900px;
         overflow: auto;
         overflow-x: scroll;
         /* display: none; */
     }
-  }
-  @media(max-width:600px){
-    .create-modal{
+}
+
+@media(max-width:600px) {
+    .create-modal {
         width: 80%;
         left: 10%;
     }
-  }
-  @media(max-width:400px){
-    .create-modal{
+}
+
+@media(max-width:400px) {
+    .create-modal {
         padding: 20px;
     }
-  }
-  @media(max-width:600px){
-    .change-modal{
+}
+
+@media(max-width:600px) {
+    .change-modal {
         width: 80%;
         left: 10%;
     }
-  }
-  @media(max-width:400px){
-    .change-modal{
+}
+
+@media(max-width:400px) {
+    .change-modal {
         padding: 20px;
     }
-  }
+}
 </style>
