@@ -23,7 +23,7 @@
             </div>
             <div class="circle-wrapper">
                 <div class="circle-card" v-for="i in store.allProducts" :key="i.id">
-                    <img src="https://img.freepik.com/premium-vector/colorful-illustration-of-communication-via-the-internet-social-networking-chat-video-news-messages-web-site-search-friends-mobile-web-graphics-flat-style-modern-design-illustration_126608-311.jpg" alt="foto">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
                     <h3>
                         {{ i.title }}
                     </h3>
@@ -49,6 +49,7 @@
 <script setup>
 import { onMounted, ref, reactive } from "vue";
 import axios from "@/services/axios";
+import CONFIG from "@/stores/config";
 
 const store = reactive({
     allProducts: false,
@@ -57,9 +58,6 @@ const store = reactive({
 const getAllProduct = () => {
     axios
         .get("/lessons/find-all", {
-            //   headers: {
-            //     Authorization: `Bearer ${localStorage.getItem("token")}`,
-            //   },
         })
         .then((res) => {
             console.log(res.data);

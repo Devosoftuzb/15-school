@@ -18,7 +18,7 @@
             <div class="main-wrapper">
                 <div class="main-left">
                     <div class="left-card" v-for="i in store.allProducts" :key="i.id">
-                        <img src="https://media.huquqiyportal.uz/public/files/1696587867077.jpg" alt="foto">
+                        <img :src="CONFIG.API_URL + i.image" alt="foto">
                         <div class="left-card-content">
                             <h3>
                                 {{ i.title }}
@@ -228,6 +228,7 @@
 <script setup>
 import { onMounted, ref, reactive } from "vue";
 import axios from "@/services/axios";
+import CONFIG from "@/stores/config";
 
 const store = reactive({
     allProducts: false,
@@ -236,9 +237,6 @@ const store = reactive({
 const getAllProduct = () => {
     axios
         .get("/news/find-all", {
-            //   headers: {
-            //     Authorization: `Bearer ${localStorage.getItem("token")}`,
-            //   },
         })
         .then((res) => {
             console.log(res.data);
