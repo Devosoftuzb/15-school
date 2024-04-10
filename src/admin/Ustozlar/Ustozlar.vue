@@ -318,6 +318,7 @@ const deleteTeacher = (id) => {
         .then((res) => {
             // console.log(res)
             getAllTeacher()
+            location.reload()
         })
         .catch((error) => {
             console.log(error);
@@ -372,6 +373,7 @@ const editTeacher = () => {
             edit.number = ""
             edit.status = false
             getAllTeacher()
+            location.reload()
         })
         .catch((error) => {
             console.log("error", error);
@@ -409,6 +411,7 @@ const createTeacher = () => {
             teacher.status = false;
             modal.value = false
             getAllTeacher()
+            location.reload()
         })
         .catch((error) => {
             console.log(error);
