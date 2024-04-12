@@ -1,6 +1,9 @@
 <template>
     <section class="hero">
-        <div class="container">
+        <div class="container hero-wrapper">
+            <div class="overflow">
+
+            </div>
             <div class="hero-content">
                 <h1>
                     Huquqiy Portla
@@ -8,35 +11,6 @@
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae minima
                 </p>
-                <label>
-                    <input id="search" type="text" placeholder="Izlash">
-                    <svg for="search" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
-                        <path fill="currentColor"
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0" />
-                    </svg>
-                </label>
-                <!-- <div class="hero-wrapper">
-                    <div class="hero-card">
-                        <h3>
-                            Saylov
-                        </h3>
-                    </div>
-                    <div class="hero-card">
-                        <h3>
-                            Mehnat
-                        </h3>
-                    </div>
-                    <div class="hero-card">
-                        <h3>
-                            Transport
-                        </h3>
-                    </div>
-                    <div class="hero-card">
-                        <h3>
-                            Qishloq xo`jaligi
-                        </h3>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -281,8 +255,8 @@
     </section>
     <section class="unions">
         <div class="container">
-            <div class="unions-wrapper" v-for="i in store.partnerships" :key="i.id">
-                <div>
+            <div class="unions-wrapper">
+                <div  v-for="i in store.partnerships" :key="i.id">
                     <img :src="CONFIG.API_URL + i.image" alt="foto">
                 </div>
             </div>
@@ -420,7 +394,8 @@ onMounted(() => {
 
 <style lang="css" scoped>
 .hero {
-    margin-top: 140px;
+    position: relative;
+    /* margin-top: 140px; */
     background-image: url("/public/imges/hero-bg.jpg");
     /* background-position: center; */
     background-repeat: no-repeat;
@@ -439,7 +414,6 @@ onMounted(() => {
     font-size: 25px;
     color: white;
     width: 600px;
-    margin-bottom: 40px;
 }
 
 .hero input {
@@ -542,6 +516,9 @@ onMounted(() => {
     width: 500px;
     height: 300px;
     border-radius: 30px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 .new-card {
@@ -709,6 +686,10 @@ onMounted(() => {
 .teacher-foto img {
     width: 450px;
     height: 490px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    border-radius:20px ;
 }
 
 .teacher-wrapper {
@@ -820,6 +801,10 @@ onMounted(() => {
     transition: 0.5s;
     width: 200px;
     border-radius: 20px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    border-radius:20px ;
 }
 
 .teacher-card h2 {
@@ -901,6 +886,7 @@ onMounted(() => {
 .circle {
     background-color: #F9F9F9;
     margin-top: 80px;
+    padding: 30px;
 }
 
 .circle-title h1 {
@@ -908,15 +894,23 @@ onMounted(() => {
 }
 
 .circle-card {
-    padding: 10px 20px;
-    padding-bottom: 20px;
+    padding: 30px 20px;
+    /* padding-bottom: 20px; */
     background-color: white;
-    width: 500px;
+    /* width: 500px; */
 }
 
 .circle-card img {
     width: 100%;
-    /* height: 400px; */
+    height: 300px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    border-radius:20px ;
 }
 
 .circle-card h3 {
@@ -1255,7 +1249,8 @@ onMounted(() => {
 .unions-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 100px;
 }
 
 @media(max-width:950px) {
@@ -1273,5 +1268,23 @@ onMounted(() => {
     .unions img {
         width: 100%
     }
+}
+.hero-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+.overflow{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(56, 56, 56, 0.418);
 }
 </style>
