@@ -15,7 +15,7 @@
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0" />
                     </svg>
                 </label>
-                <div class="hero-wrapper">
+                <!-- <div class="hero-wrapper">
                     <div class="hero-card">
                         <h3>
                             Saylov
@@ -36,7 +36,7 @@
                             Qishloq xo`jaligi
                         </h3>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -49,14 +49,14 @@
                 <router-link to="/yangilik"><button>Barcha yangiliklar</button></router-link>
             </div>
             <div class="new-wrapper">
-                <div class="new-card" v-for="i in store.news" :key="i.id">
-                    <img :src="CONFIG.API_URL + i.image" alt="">
+                <div class="new-card">
+                    <img :src="CONFIG.API_URL + store.oneNews.image" alt="">
                     <div class="new-card-content">
                         <h3>
-                            {{ i.title }}
+                            {{ store.oneNews.title }}
                         </h3>
                         <p>
-                            {{ i.body }}
+                            {{ store.oneNews.body }}
                         </p>
                         <div class="new-icon">
                             <div>
@@ -67,7 +67,7 @@
                                         d="M4.5 4c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m7 0c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m4 2H.5C.22 6 0 5.78 0 5.5S.22 5 .5 5h15c.28 0 .5.22.5.5s-.22.5-.5.5" />
                                 </svg>
                                 <span>
-                                    {{ i.createdAt.slice(0, 10) }}
+                                    {{ store.newsData }}
                                 </span>
                             </div>
                             <div>
@@ -83,13 +83,13 @@
                     </div>
                 </div>
                 <div class="new-cursor">
-                    <div class="left-cursor" @click="store.sch == 0 ? store.sch = store.length - 1  : store.sch -= 1">
+                    <div class="left-cursor" @click="back">
                         <svg class="right" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                             viewBox="0 0 15 15">
                             <path fill="none" stroke="currentColor" stroke-linecap="square" d="M10 14L3 7.5L10 1" />
                         </svg>
                     </div>
-                    <div class="right-cursor" @click="store.sch == store.length - 1 ? store.sch = 0 : store.sch += 1">
+                    <div class="right-cursor" @click="next">
                         <svg class="left" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                             viewBox="0 0 15 15">
                             <path fill="none" stroke="currentColor" stroke-linecap="square" d="m5 14l7-6.5L5 1" />
@@ -281,18 +281,9 @@
     </section>
     <section class="unions">
         <div class="container">
-            <div class="unions-wrapper">
+            <div class="unions-wrapper" v-for="i in store.partnerships" :key="i.id">
                 <div>
-                    <img src="https://advice.uz/static/assets/img/advice.svg" alt="foto">
-                </div>
-                <div>
-                    <img src="https://bolahuquqlari.uz/static/assets/img/logo.svg" alt="foto">
-                </div>
-                <div>
-                    <img src="https://api.logobank.uz/media/logos_preview/Adliya_vazirligi-01.png" alt="foto">
-                </div>
-                <div>
-                    <img src="https://tashkent.archive.uz/source/posts/ochiq%20malumotlar/ochiq-web.png" alt="foto">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
                 </div>
             </div>
         </div>
@@ -310,6 +301,8 @@ function changeValu() {
 
 const store = reactive({
     news: false,
+    oneNews: false,
+    newsData: false,
     teachers: false,
     lessons: false,
     partnerships: false,
@@ -318,18 +311,39 @@ const store = reactive({
 });
 
 
+const next = () => {
+    if(store.sch == store.length - 1){
+        store.sch = 0
+    }
+    else {
+        store.sch = store.sch + 1
+    }
+    getAllNewsProduct()
+}
+
+const back = () => {
+    if(store.sch == 0){
+        store.sch = store.length - 1
+    }
+    else {
+        store.sch = store.sch - 1
+    }
+    getAllNewsProduct()
+}
+
+
 const getAllNewsProduct = () => {
     axios
         .get("/news/find-all", {
         })
         .then((res) => {
-            console.log(res.data);
             store.news = res.data
             store.length = res.data?.length
-            store.error = false;
+            store.oneNews = store.news[store.sch]
+            store.newsData = store.oneNews.createdAt.slice(0,10)
         })
         .catch((error) => {
-            store.error = true;
+            console.log(error);
         });
 };
 
@@ -342,10 +356,9 @@ const getAllTeachersProduct = () => {
             store.teachers.sort(function (x, y) {
                 return (x.status === y.status) ? 0 : y.status ? -1 : 1;
             });
-            store.error = false;
         })
         .catch((error) => {
-            store.error = true;
+            console.log(error);
         });
 };
 
@@ -356,10 +369,9 @@ const getAllLessonsProduct = () => {
         })
         .then((res) => {
             store.lessons = res.data
-            store.error = false;
         })
         .catch((error) => {
-            store.error = true;
+            console.log(error);
         });
 };
 
@@ -370,10 +382,9 @@ const getAllPartnershipsProduct = () => {
         })
         .then((res) => {
             store.partnerships = res.data
-            store.error = false;
         })
         .catch((error) => {
-            store.error = true;
+            console.log(error);
         });
 };
 
