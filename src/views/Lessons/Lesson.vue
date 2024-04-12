@@ -80,7 +80,7 @@ onMounted(() => {
     .lesson-header{
         margin-top: 120px;
         padding: 20px;
-        background-color: #E1EFED;
+        background-color: #001457;
     }
     .header-wrapper{
         display: flex;
@@ -90,6 +90,7 @@ onMounted(() => {
     .lesson-header h1{
         font-size: 40px;
         font-weight: 400;
+        color: white;
     }
     @media(max-width:425px){
     .lesson-header h1{

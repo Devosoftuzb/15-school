@@ -3,7 +3,7 @@
         <div class="container">
             <div class="footer-wrapper">
                 <div class="footer-logo">
-                    <img src="https://mpe.uz/front-end/assets_files/images/green-logo_uz.svg" alt="">
+                    <img src="/imges/footer.png" alt="">
                 </div>
                 <div class="footer-manzil">
                     <h2>
@@ -58,15 +58,20 @@ footer{
     margin-top: 80px;
     /* margin-top: 100px; */
     padding-top: 50px;
-    background-color: #009189;
+    background-color: #001457;
     padding-bottom: 80px;
 }
 .footer-wrapper{
    display: grid;
+   align-items: center;
    grid-template-columns: repeat(6,1fr);
 }
 .footer-logo h1{
     color: white;
+}
+.footer-logo img{
+    width: 100px;
+    cursor: pointer;
 }
 footer h2{
     color:#ffff;

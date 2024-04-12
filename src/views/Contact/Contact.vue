@@ -106,16 +106,18 @@ const createContact = () => {
     .submit-btn {
         background-color: #597BA2;
         color: white;
-        padding: 10px 20px 10px 20px;
+        padding: 10px 50px;
+        width: 100%;
         border: 1px solid #597BA2;
         border-radius: 10px;
         margin-top: 10px;
+        cursor: pointer;
     }
 
     .contact-header{
         margin-top: 140px;
         padding: 20px;
-        background-color: #E1EFED;
+        background-color: #001457;
     }
     .header-wrapper{
         display: flex;
@@ -125,6 +127,7 @@ const createContact = () => {
     .contact-header h1{
         font-size: 40px;
         font-weight: 400;
+        color: white;
     }
     @media(max-width:425px){
     .contact-header h1{

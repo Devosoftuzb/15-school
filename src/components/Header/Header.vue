@@ -4,7 +4,7 @@
             <div class="header-top-wrapper">
                 <div class="header-top-language">
                     <h3>
-                        Accessible
+                        15-Maktab
                     </h3>
                     <!-- <select name="" id="">
                         <option value="Russ">Russ</option>
@@ -30,40 +30,38 @@
         <div class="container">
             <div class="header-main">
             <div class="heaer-logo">
-                <h1>
-                    MS.GOV
-                </h1>
+                <img src="/imges/header-logo.png" alt="">
                 <div class="header-line-y">
 
                 </div>
                 <h3>
-                    Offical website of school
+                    Rasmiy veb-sayt
                 </h3>
             </div>
             <nav>
                 <ul>
                     <li>
-                        <router-link to="/"><span>
+                        <router-link to="/">
                             Bosh sahifa
-                        </span></router-link>
+                        </router-link>
                     </li>
                     <li>
-                        <router-link to="/teacher"><span>Ustozlar</span></router-link>
+                        <router-link to="/teacher">Ustozlar</router-link>
                     </li>
                     <li>
-                        <router-link to="/yangilik"><span>
+                        <router-link to="/yangilik">
                             Yangliklar
-                        </span></router-link>
+                        </router-link>
                     </li>
                     <li>
-                        <router-link to="/lessons"><span>
+                        <router-link to="/lessons">
                             Togaraklar
-                        </span></router-link>
+                        </router-link>
                     </li>
                     <li>
-                        <router-link to="/contact"><span>
+                        <router-link to="/contact">
                             Bog`lanish
-                        </span></router-link>
+                        </router-link>
                     </li>
                 </ul>
             </nav>
@@ -76,27 +74,27 @@
         <div class="header-modal-mobile">
             <ul>
                     <li>
-                        <router-link to="/"><span>
+                        <router-link to="/">
                             Bosh sahifa
-                        </span></router-link>
+                        </router-link>
                     </li>
                     <li>
-                        <router-link to="/teacher"><span>Ustozlar</span></router-link>
+                        <router-link to="/teacher">Ustozlar</router-link>
                     </li>
                     <li>
-                        <router-link to="/yangilik"><span>
+                        <router-link to="/yangilik">
                             Yangliklar
-                        </span></router-link>
+                        </router-link>
                     </li>
                     <li>
-                        <router-link to="/lessons"><span>
+                        <router-link to="/lessons">
                             Togaraklar
-                        </span></router-link>
+                        </router-link>
                     </li>
                     <li>
-                        <router-link to="/contact"><span>
+                        <router-link to="/contact">
                             Bog`lanish
-                        </span></router-link>
+                        </router-link>
                     </li>
                 </ul>
         </div>
@@ -117,7 +115,8 @@
 </script>
 
 <style lang="css" scoped>
-    header{
+
+header{
         /* border: 1px solid black; */
         /* margin-top: 10px; */
         position: fixed;
@@ -182,15 +181,18 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
     .header-main nav ul{
         display: flex;
         align-items: center;
-        gap: 80px;
+        gap: 50px;
     }
     .header-main nav li a {
+        padding: 10px 15px;
+        border-radius: 30px;
+        font-weight: bold;
         color: black;
     }
     .header-bottom{
@@ -227,7 +229,7 @@
     display: block;
     width: 100%;
     height: 4px;
-    background-color: #000;
+    background-color: #001457 ;
     position: absolute;
     left: 0;
     transition: .3s all linear;
@@ -241,6 +243,7 @@
 .burger__line_third {
     top: 50%;
     transform: translateY(-50%);
+    
 }
 
 .burger__line_fourth {
@@ -250,14 +253,17 @@
 .burger_active .burger__line_first,
 .burger_active .burger__line_fourth {
     opacity: 0;
+    
 }
 
 .burger_active .burger__line_second {
     transform: translateY(-50%) rotate(45deg);
+    background-color: #fff;
 }
 
 .burger_active .burger__line_third {
     transform: translateY(-50%) rotate(-45deg);
+    background-color: #fff;
 }
 .burger{
     display: none;
@@ -310,7 +316,22 @@
 }
 header ul li span{
     font-weight: 800;
-    color: #001336;
+    color: white;
+}
+.heaer-logo img{
+    width: 80px;
+}
+.header-modal-mobile li a {
+    color: white;
+    padding: 10px 15px;
+    border-radius:30px ;
+    font-size: 20px;
+}
+.router-link-exact-active {
+    background-color: #001457;
+    width: 100%;
+    color: white !important;
+
 }
     @media(max-width:1000px){
         .header-main nav ul{

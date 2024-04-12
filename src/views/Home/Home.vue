@@ -250,7 +250,9 @@
                     Hududiy Boshqarmalar
                 </h1>
                 <h2>
-                    Hududiy adliya
+                    <router-link to="/contact">
+                        Bog`lanish
+                    </router-link>
                 </h2>
             </div>
             <div class="map-wrapper">
@@ -259,52 +261,20 @@
                 </div>
                 <div class="map-content">
                     <h2>
-                        Hududiy Boshqarmalar
+                        Manzil
                     </h2>
                     <h3>
-                        Andijon Viloyati hududi
+                        Guliston shaxar 
                     </h3>
                     <div class="map-content-line">
 
                     </div>
                     <h2>
-                        Samatov Ziyovidin
+                        Mojal
                     </h2>
-                    <div class="map-content-grid">
-                        <h4>
-                            Lavozim:
-                        </h4>
-                        <span>
-                            Boshliq
-                        </span>
-                    </div>
-                    <div class="map-content-grid">
-                        <h4>
-                            Lavozim:
-                        </h4>
-                        <span>
-                            Boshliq
-                        </span>
-                    </div>
-                    <div class="map-content-grid">
-                        <h4>
-                            Lavozim:
-                        </h4>
-                        <span>
-                            Boshliq
-                        </span>
-                    </div>
-                    <div class="map-content-grid">
-                        <h4>
-                            Lavozim:
-                        </h4>
-                        <span>
-                            Boshliq
-                        </span>
-                    </div>
-                    <h5>
-                        Depanjidan@gmail.uz
-                    </h5>
+                    <h3>
+                        Dram teatir oldidagi bino 
+                    </h3>
                 </div>
             </div>
         </div>
@@ -440,8 +410,8 @@ onMounted(() => {
 <style lang="css" scoped>
 .hero {
     margin-top: 140px;
-    background-image: url("https://huquqiyportal.uz/_nuxt/img/slide.f00f149.png");
-    background-position: center;
+    background-image: url("/public/imges/hero-bg.jpg");
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 230px;
@@ -545,8 +515,8 @@ onMounted(() => {
 .new-title button {
     padding: 10px 20px;
     border-radius: 40px;
-    border: 1px solid #597BA2;
-    background-color: #597BA2;
+    border: 1px solid #001457;
+    background-color: #001457;
     color: white;
     cursor: pointer;
     font-size: 15px;
@@ -554,7 +524,7 @@ onMounted(() => {
 
 .new-title button:hover {
     background-color: transparent;
-    color: #597BA2;
+    color: #001457;
 }
 
 .new-card img {
@@ -614,9 +584,9 @@ onMounted(() => {
     justify-content: center;
     border-radius: 50%;
     padding: 15px;
-    background-color: #597BA3;
+    background-color: #001457;
     cursor: pointer;
-    border: 1px solid #597BA3;
+    border: 1px solid #001457;
 }
 
 .right-cursor {
@@ -626,24 +596,22 @@ onMounted(() => {
     justify-content: center;
     border-radius: 50%;
     padding: 15px;
-    background-color: #597BA3;
+    background-color: #001457;
     cursor: pointer;
-    border: 1px solid #597BA3;
+    border: 1px solid #001457;
 }
 
 .left-cursor:hover {
     background-color: white;
-
     .right {
-        color: #597BA3;
+        color: #001457;
     }
 }
 
 .right-cursor:hover {
     background-color: white;
-
     .left {
-        color: #597BA3;
+        color: #001457;
     }
 }
 
@@ -692,7 +660,7 @@ onMounted(() => {
 
 
 .Teacher {
-    background-color: #061E3F;
+    background-color: #001457;
     padding-top: 20px;
     padding-bottom: 50px;
 }
@@ -1060,10 +1028,9 @@ onMounted(() => {
 
 .map-title h1 {
     font-size: 50px;
-    font-weight: 300;
 }
 
-.map-title h2 {
+.map-title h2 a{
     font-size: 20px;
     font-weight: 400;
     color: #95929E;
@@ -1079,7 +1046,7 @@ onMounted(() => {
    }
    .map-wrapper{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     gap: 20px;
 }
@@ -1090,6 +1057,7 @@ onMounted(() => {
     padding-top: 30px;
     padding: 50px 80px;
     background-color: #F8F8F8;
+    width: 500px;
 }
 
 .map-content h2 {
@@ -1254,6 +1222,11 @@ onMounted(() => {
 @media(max-width:350px) {
     .map-content h2 {
         font-size: 25px;
+    }
+}
+@media(max-width:500px) {
+    .map-content  {
+        width: 100%;
     }
 }
 

@@ -259,12 +259,13 @@ onMounted(() => {
 .new-header {
     margin-top: 140px;
     padding: 20px;
-    background-color: #E1EFED;
+    background-color: #001457;
 }
 
 .new-header h1 {
     font-size: 40px;
     font-weight: 400;
+    color: white;
 }
 
 .new-header-wrapper {
