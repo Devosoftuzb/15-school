@@ -287,7 +287,9 @@ onMounted(() => {
 .new-main {
     margin-top: 50px;
 }
-
+.main-left{
+    width: 70%;
+}
 .left-card {
     padding: 10px;
     margin-bottom: 20px;
@@ -296,6 +298,7 @@ onMounted(() => {
     display: flex;
     align-items: center;
     gap: 30px;
+    width: 100%;
 }
 
 .left-card img {
@@ -308,9 +311,7 @@ onMounted(() => {
     margin-bottom: 20px;
 }
 
-.left-card p {
-    margin-bottom: 20px;
-}
+
 
 .card-icon {
     display: flex;
@@ -329,7 +330,9 @@ onMounted(() => {
 .card-icon svg {
     font-size: 20px;
 }
-
+.main-right{
+    width: 30%;
+}
 .right-card {
     margin-bottom: 20px;
     display: flex;
@@ -345,7 +348,7 @@ onMounted(() => {
 
 .main-wrapper {
     display: flex;
-    /* align-items: flex; */
+    /* justify-content: space-between; */
     gap: 30px;
 }
 
@@ -363,7 +366,10 @@ onMounted(() => {
 .right-card h3 {
     margin-bottom: 10px;
 }
-
+.left-card p {
+    margin-bottom: 20px;
+    width: 100%;
+}
 @media(max-width:1070px) {
     .main-wrapper {
         display: flex;
@@ -371,7 +377,7 @@ onMounted(() => {
         flex-wrap: wrap;
     }
 
-    .main-right {
+    .main-right, .main-left {
         width: 100%;
     }
 
@@ -397,6 +403,9 @@ onMounted(() => {
     .left-card img {
         width: 100%;
         height: 100%;
+    }
+    .left-card-content{
+        width: 100%;
     }
 }
 

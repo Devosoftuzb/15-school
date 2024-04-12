@@ -166,8 +166,8 @@
                                 <h3>
                                     Malumot
                                 </h3>
-                                <textarea v-model="teacher.info" class="teacher-info" name="" id="" cols="30"
-                                    rows="10"></textarea>
+                                <textarea v-model="teacher.info" class="teacher-info" name="" id="" cols=""
+                                    rows=""></textarea> 
                             </label>
                         </div>
                         <div class="role">

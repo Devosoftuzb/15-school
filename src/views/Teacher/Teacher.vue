@@ -185,26 +185,33 @@ onMounted(() => {
 .card-grid svg {
     font-size: 25px;
 }
-
+.techer2-card{
+    padding: 20px;
+}
 .card-wrapper {
     display: flex;
     align-items: center;
     gap: 50px;
     /* justify-content: space-between; */
+    border: 1px solid rgb(65, 46, 46);
+    border-radius: 20px;
+    padding: 10px
 }
-
+.card-wrapper img{
+    border-radius: 20px;
+}
 .teacher2-wrapper {
     margin-top: 50px;
     width: 100%;
     display: flex;
     gap: 20px;
 }
-
 .menu {
     width: 350px;
     height: 500px;
     background-color: #EBF2F8;
     padding: 30px;
+    border-radius: 10px;
 }
 
 .teacher2-content {

@@ -1,9 +1,7 @@
 <template>
     <div :class="sidebar.sidebar ? 'Saidbar' : 'Saidbar-of'">
         <div class="saidbar-logo">
-            <h1>
-                Logo
-            </h1>
+            <img src="/public/imges/footer.png" alt="">
         </div>
         <div class="saidbar-main">
             <ul>
@@ -125,7 +123,11 @@ ul a svg{
     display: none;
     
 }
-#active{
+.router-link-exact-active {
     background-color: #624BFF;
+    width: 100%;
+}
+.saidbar-logo img{
+    width: 90px;
 }
 </style>
