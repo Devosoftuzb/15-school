@@ -440,6 +440,9 @@ table tbody img {
     width: 200px;
     height: 100px;
     border-radius: 10px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 .yangilik-foto {

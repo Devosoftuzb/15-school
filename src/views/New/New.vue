@@ -184,6 +184,9 @@ onMounted(() => {
     width: 310px;
     height: 200px;
     border-radius: 30px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 .left-card h3 {
@@ -222,9 +225,12 @@ onMounted(() => {
 }
 
 .right-card img {
-    width: 185px;
+    width: 305px;
     height: 100px;
     border-radius: 30px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 .main-wrapper {
@@ -276,6 +282,9 @@ onMounted(() => {
     .right-card h3 {
         font-size: 80%;
     }
+    .right-card img{
+        height: 150px;
+    }
 }
 
 @media(max-width:700px) {
@@ -286,7 +295,6 @@ onMounted(() => {
 
     .left-card img {
         width: 100%;
-        height: 100%;
     }
 
     .left-card-content {

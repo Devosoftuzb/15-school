@@ -50,7 +50,7 @@
                             Telefon raqamingizdi kiriting
                         </h3>
                        <div class="tel-grid">
-                        <span>+9989</span> <input v-model="contact.phone" id="tel" type="number">
+                        <span>+9989</span> <input v-model="contact.phone"   id="tel" type="number">
                        </div>
                     </label>
                     <!-- <br> -->

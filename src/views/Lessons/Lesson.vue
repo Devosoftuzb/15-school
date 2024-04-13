@@ -116,7 +116,14 @@ onMounted(() => {
         width: 500px;
     }
     .circle-card img{
-        width: 100%;
+        overflow: hidden;
+        object-fit: cover;
+        object-position: center;
+        width: 400px;
+        height: 400px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
         /* height: 400px; */
     }
     .circle-card h3{
@@ -128,6 +135,7 @@ onMounted(() => {
         justify-content: space-between;
     }
     .circle-wrapper{
+        padding: 30px 0px;
         margin-top: 50px;
         display: grid;
         grid-template-columns: repeat(3,1fr);
@@ -156,6 +164,10 @@ onMounted(() => {
         .circle-card{
             width: 350px;
         }
+        .circle-card img{
+            width: 100%;
+            height: 80%;
+        }
     }
     @media(max-width:1140px){
         .circle-wrapper{
@@ -168,14 +180,16 @@ onMounted(() => {
             grid-template-columns: repeat(1,1fr);
             margin-left: 150px;
         }
-        
+        .circle-card img{
+            width: 100%;
+            height: 300px;
+        }
     }
     @media(max-width:640px){
         .circle-wrapper{
             grid-template-columns: repeat(1,1fr);
             margin-left: 100px;
         }
-        
     }
     @media(max-width:560px){
         .circle-wrapper{
@@ -194,6 +208,10 @@ onMounted(() => {
     @media(max-width:450px){
         .circle-card{
             width: 100%;
+        }
+        .circle-card img{
+            width: 100%;
+            height: 300px;
         }
         .circle-wrapper{
             margin-left: 0;

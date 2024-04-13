@@ -520,9 +520,9 @@ table tbody td {
 }
 
 table tbody td img {
-    display: felx;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 table tbody img {

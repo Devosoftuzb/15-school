@@ -95,6 +95,9 @@
                     </button>
                 </div>
             </div>
+            <div>
+                
+            </div>
         </main>
     </div>
 </template>
@@ -170,6 +173,7 @@ const getAll = () => {
 onMounted(() => {
     getAll();
 });
+
 
 </script>
 

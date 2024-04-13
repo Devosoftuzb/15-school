@@ -154,6 +154,10 @@ onMounted(() => {
 
 .card-wrapper-foto img {
     width: 400px;
+    height: 400px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card-content h2 {
@@ -193,7 +197,7 @@ onMounted(() => {
     align-items: center;
     gap: 50px;
     /* justify-content: space-between; */
-    border: 1px solid rgb(65, 46, 46);
+    border: 1px solid #0028aa;
     border-radius: 20px;
     padding: 10px
 }
@@ -217,7 +221,7 @@ onMounted(() => {
 .teacher2-content {
     width: 100%;
     /* box-shadow: 5px 10px 5px  rgb(79, 79, 79); */
-    border: 1px solid #DEE5ED;
+    border: 1px solid #001457;
     border-radius: 30px;
     padding: 50px 0;
     padding-left: 10px;
@@ -273,14 +277,18 @@ onMounted(() => {
     }
 }
 
-@media(max-width:300px) {
+@media(max-width:450px) {
     .card-wrapper-foto img {
         width: 100%;
+        height: 300px;
         border-radius: 20px;
     }
 
     .card-content h2 {
-        font-size: 30px;
+        font-size: 20px;
+    }
+    .card-content h3 {
+        font-size: 20px;
     }
 
     .card-grid {
@@ -289,6 +297,13 @@ onMounted(() => {
 
     .teacher2-content {
         padding: 20px 10px;
+    }
+}
+@media(max-width:350px) {
+    .card-wrapper-foto img {
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
     }
 }
 </style>
