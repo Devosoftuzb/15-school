@@ -91,8 +91,7 @@
             <div class="teacher-wrapper" v-for="i in store.teachers" :key="i.id">
                 <div v-if="i.status" class="teacher-wrapper">
                     <div class="teacher-foto">
-                        <img :src="CONFIG.API_URL + i.image"
-                            alt="foto">
+                        <img :src="CONFIG.API_URL + i.image" alt="foto">
                     </div>
                     <div class="teacher-bio">
                         <h3>
@@ -126,9 +125,7 @@
             <div class="teacher-swiper">
                 <div v-for="i in store.showTeachers" :key="i.id">
                     <div class="teacher-card" v-if="!i.status">
-                        <img class="teacher-img"
-                            :src="CONFIG.API_URL + i.image"
-                            alt="foto">
+                        <img class="teacher-img" :src="CONFIG.API_URL + i.image" alt="foto">
                         <h2 class="teacher-name">
                             {{ i.full_name }}
                         </h2>
@@ -138,6 +135,22 @@
                     </div>
                 </div>
             </div>
+
+            <swiper class="swiper-preloader-spin" :modules="modules" :slides-per-view="2"
+                :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
+                @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
+                <swiper-slide v-for="i in store.showTeachers" :key="i.id">
+                    <div class="teacher-card" v-if="!i.status">
+                        <img class="teacher-img" :src="CONFIG.API_URL + i.image" alt="foto">
+                        <h2 class="teacher-name">
+                            {{ i.full_name }}
+                        </h2>
+                        <h3>
+                            {{ i.profession }}
+                        </h3>
+                    </div>
+                </swiper-slide>
+            </swiper>
         </div>
     </section>
     <section class="circle">
@@ -149,8 +162,7 @@
             </div>
             <div class="circle-wrapper">
                 <div class="circle-card" v-for="i in store.showLesson" :key="i.id">
-                    <img  :src="CONFIG.API_URL + i.image"
-                        alt="foto">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
                     <h3>
                         {{ i.title }}
                     </h3>
@@ -199,14 +211,17 @@
             </div>
             <div class="map-wrapper">
                 <div class="map-img">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24271.83735470279!2d68.76355628885737!3d40.49783261717992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b20721fdb13df7%3A0x8a5a8468b3d6235b!2s15-maktab!5e0!3m2!1sru!2s!4v1712145430487!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24271.83735470279!2d68.76355628885737!3d40.49783261717992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b20721fdb13df7%3A0x8a5a8468b3d6235b!2s15-maktab!5e0!3m2!1sru!2s!4v1712145430487!5m2!1sru!2s"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="map-content">
                     <h2>
                         Manzil
                     </h2>
                     <h3>
-                        Guliston shaxar 
+                        Guliston shaxar
                     </h3>
                     <div class="map-content-line">
 
@@ -215,7 +230,7 @@
                         Mojal
                     </h2>
                     <h3>
-                        Dram teatir oldidagi bino 
+                        Dram teatir oldidagi bino
                     </h3>
                 </div>
             </div>
@@ -224,159 +239,176 @@
     <section class="unions">
         <div class="container">
             <div class="unions-wrapper">
-                <div  v-for="i in store.partnerships" :key="i.id">
+                <div v-for="i in store.partnerships" :key="i.id">
                     <img :src="CONFIG.API_URL + i.image" alt="foto">
                 </div>
             </div>
+
+            <swiper class="swiper-preloader-spin" :modules="modules" :slides-per-view="3"
+                :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
+                @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
+                <swiper-slide v-for="i in store.partnerships" :key="i.id">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
+                </swiper-slide>
+            </swiper>
         </div>
     </section>
 
 </template>
 
-<script setup>
+<script>
 import { onMounted, ref, reactive } from "vue";
 import axios from "@/services/axios";
 import CONFIG from "@/stores/config";
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/vue';
+import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 let navig = document.getElementById("navig")
 function changeValu() {
     navig.value = "Redq"
 }
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    setup() {
+        const swiper = useSwiper();
+        const onSwiper = (swiper) => {
+            console.log(swiper);
+        };
+        const onSlideChange = () => {
+            console.log('slide change');
+        };
 
-const store = reactive({
-    news: false,
-    oneNews: false,
-    newsData: false,
-    teachers: false,
-    showTeachers: [],
-    lessons: false,
-    showLesson: [],
-    partnerships: false,
-    sch: 0,
-    length: 0
-});
-
-
-const next = () => {
-    if(store.sch == store.length - 1){
-        store.sch = 0
-    }
-    else {
-        store.sch = store.sch + 1
-    }
-    getAllNewsProduct()
-}
-
-const back = () => {
-    if(store.sch == 0){
-        store.sch = store.length - 1
-    }
-    else {
-        store.sch = store.sch - 1
-    }
-    getAllNewsProduct()
-}
-
-
-const getAllNewsProduct = () => {
-    axios
-        .get("/news/find-all", {
-        })
-        .then((res) => {
-            store.news = res.data
-            store.length = res.data?.length
-            store.oneNews = store.news[store.sch]
-            store.newsData = store.oneNews.createdAt.slice(0,10)
-        })
-        .catch((error) => {
-            console.log(error);
+        const store = reactive({
+            news: false,
+            oneNews: false,
+            newsData: false,
+            teachers: false,
+            showTeachers: [],
+            lessons: false,
+            showLesson: [],
+            partnerships: false,
+            sch: 0,
+            length: 0
         });
-};
 
-const getAllTeachersProduct = () => {
-    axios
-        .get("/teachers/find-all", {
-        })
-        .then((res) => {
-            store.teachers = res.data
-            store.teachers.sort(function (x, y) {
-                return (x.status === y.status) ? 0 : y.status ? -1 : 1;
-            });
-            if (store.teachers.length > 7){
-                for (let i = 0; i < 7; i++){
-                    store.showTeachers.push(store.teachers[i])
-                }
+
+        const next = () => {
+            if (store.sch == store.length - 1) {
+                store.sch = 0
             }
             else {
-                store.showTeachers = store.teachers
+                store.sch = store.sch + 1
             }
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-};
+            getAllNewsProduct()
+        }
 
-
-const getAllLessonsProduct = () => {
-    axios
-        .get("/lessons/find-all", {
-        })
-        .then((res) => {
-            store.lessons = res.data
-            if (store.lessons.length > 6){
-                for (let i = 0; i < 6; i++){
-                    store.showLesson.push(store.lessons[i])
-                }
+        const back = () => {
+            if (store.sch == 0) {
+                store.sch = store.length - 1
             }
             else {
-                store.showLesson = store.lessons
+                store.sch = store.sch - 1
             }
-        })
-        .catch((error) => {
-            console.log(error);
+            getAllNewsProduct()
+        }
+
+
+        const getAllNewsProduct = () => {
+            axios
+                .get("/news/find-all", {
+                })
+                .then((res) => {
+                    store.news = res.data
+                    store.length = res.data?.length
+                    store.oneNews = store.news[store.sch]
+                    store.newsData = store.oneNews.createdAt.slice(0, 10)
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        };
+
+        const getAllTeachersProduct = () => {
+            axios
+                .get("/teachers/find-all", {
+                })
+                .then((res) => {
+                    store.teachers = res.data
+                    store.teachers.sort(function (x, y) {
+                        return (x.status === y.status) ? 0 : y.status ? -1 : 1;
+                    });
+                    if (store.teachers.length > 7) {
+                        for (let i = 0; i < 7; i++) {
+                            store.showTeachers.push(store.teachers[i])
+                        }
+                    }
+                    else {
+                        store.showTeachers = store.teachers
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        };
+
+
+        const getAllLessonsProduct = () => {
+            axios
+                .get("/lessons/find-all", {
+                })
+                .then((res) => {
+                    store.lessons = res.data
+                    if (store.lessons.length > 6) {
+                        for (let i = 0; i < 6; i++) {
+                            store.showLesson.push(store.lessons[i])
+                        }
+                    }
+                    else {
+                        store.showLesson = store.lessons
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        };
+
+
+        const getAllPartnershipsProduct = () => {
+            axios
+                .get("/partnerships/find-all", {
+                })
+                .then((res) => {
+                    store.partnerships = res.data
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        };
+
+        onMounted(() => {
+            getAllNewsProduct();
+            getAllTeachersProduct()
+            getAllLessonsProduct()
+            getAllPartnershipsProduct()
         });
-};
 
-
-const getAllPartnershipsProduct = () => {
-    axios
-        .get("/partnerships/find-all", {
-        })
-        .then((res) => {
-            store.partnerships = res.data
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-};
-
-onMounted(() => {
-    getAllNewsProduct();
-    getAllTeachersProduct()
-    getAllLessonsProduct()
-    getAllPartnershipsProduct()
-});
-// const app = Vue.createApp   ({
-//       data() {
-//         return {
-//           text: 'Toshkent',
-//           isHovered: false
-//         }
-//       },
-//       methods: {
-//         changeValue() {
-//           this.isHovered = true;
-//           this.text = 'Andijon';
-//         },
-//         resetValue() {
-//           this.isHovered = false;
-//           this.text = 'Toshkent';
-//         }
-//       }
-//     });
-
-//     app.mount('#app');
-
-
+        return {
+            CONFIG,
+            store,
+            next,
+            back,
+            onSwiper,
+            onSlideChange,
+            swiper,
+            modules: [Navigation, Pagination, A11y, Autoplay]
+        }
+    }
+}
 </script>
 
 <style lang="css" scoped>
@@ -578,6 +610,7 @@ onMounted(() => {
 
 .left-cursor:hover {
     background-color: white;
+
     .right {
         color: #001457;
     }
@@ -585,6 +618,7 @@ onMounted(() => {
 
 .right-cursor:hover {
     background-color: white;
+
     .left {
         color: #001457;
     }
@@ -631,7 +665,8 @@ onMounted(() => {
         border-radius: 30px;
         width: 40%;
     }
-    .new-card img{
+
+    .new-card img {
         height: 250px;
     }
 }
@@ -671,7 +706,7 @@ onMounted(() => {
     color: white;
     font-size: 50px;
     border-bottom: #E9A821 2px solid;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .teacher-foto img {
@@ -680,7 +715,7 @@ onMounted(() => {
     overflow: hidden;
     object-fit: cover;
     object-position: center;
-    border-radius:20px ;
+    border-radius: 20px;
 }
 
 .teacher-wrapper {
@@ -796,7 +831,7 @@ onMounted(() => {
     overflow: hidden;
     object-fit: cover;
     object-position: center;
-    border-radius:20px ;
+    border-radius: 20px;
 }
 
 .teacher-card h2 {
@@ -902,7 +937,7 @@ onMounted(() => {
     overflow: hidden;
     object-fit: cover;
     object-position: center;
-    border-radius:20px ;
+    border-radius: 20px;
 }
 
 .circle-card h3 {
@@ -943,7 +978,8 @@ onMounted(() => {
     .circle-card {
         width: 400px;
     }
-    .circle-card img{
+
+    .circle-card img {
         width: 100%;
         height: 200px;
     }
@@ -953,7 +989,7 @@ onMounted(() => {
     .circle-card {
         width: 350px;
     }
-    
+
 }
 
 @media(max-width:1140px) {
@@ -962,10 +998,12 @@ onMounted(() => {
         align-items: center;
         justify-content: center;
     }
-    .circle-card img{
+
+    .circle-card img {
         width: 100%;
     }
-    .circle-card{
+
+    .circle-card {
         margin: 0 auto;
     }
 }
@@ -1002,18 +1040,19 @@ onMounted(() => {
     .circle-card {
         width: 100%;
     }
-    .circle-card img{
+
+    .circle-card img {
         width: 100%;
         height: 200px;
     }
 }
 
-@media(max-width:350px){
-        .cricle-grid {
-            flex-direction: column;
-            gap: 10px;
-        }
+@media(max-width:350px) {
+    .cricle-grid {
+        flex-direction: column;
+        gap: 10px;
     }
+}
 
 
 
@@ -1035,7 +1074,7 @@ onMounted(() => {
     font-size: 50px;
 }
 
-.map-title h2 a{
+.map-title h2 a {
     font-size: 20px;
     font-weight: 400;
     color: #95929E;
@@ -1044,12 +1083,14 @@ onMounted(() => {
 
 .map-img {
     width: 900px;
-   }
-.map-img iframe{
+}
+
+.map-img iframe {
     width: 100%;
     border-radius: 30px;
-   }
-.map-wrapper{
+}
+
+.map-wrapper {
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
@@ -1120,7 +1161,8 @@ onMounted(() => {
     .map-img {
         width: 100%;
     }
-    .map-img iframe{
+
+    .map-img iframe {
         width: 100%;
     }
 }
@@ -1149,8 +1191,9 @@ onMounted(() => {
         font-size: 25px;
     }
 }
+
 @media(max-width:500px) {
-    .map-content  {
+    .map-content {
         width: 100%;
     }
 }
@@ -1180,9 +1223,11 @@ onMounted(() => {
     overflow: hidden;
     overflow-x: scroll;
 }
+
 ::-webkit-scrollbar {
-    display: none;  
+    display: none;
 }
+
 /* @media(max-width:1050px) {
     .unions-wrapper {
         flex-direction: column;
@@ -1201,17 +1246,19 @@ onMounted(() => {
         height: 220px;
     }
 } */
-.hero-wrapper{
+.hero-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .hero-content {
     text-align: center;
     position: relative;
     z-index: 2;
 }
-.overflow{
+
+.overflow {
     position: absolute;
     top: 0;
     bottom: 0;
