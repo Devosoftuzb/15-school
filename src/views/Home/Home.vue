@@ -23,7 +23,7 @@
                 <router-link to="/yangilik"><button>Barcha yangiliklar</button></router-link>
             </div>
             <div class="new-wrapper">
-                <div class="new-card">
+                <div class="new-card" v-show="store.oneNews">
                     <img :src="CONFIG.API_URL + store.oneNews.image" alt="">
                     <div class="new-card-content">
                         <h3>
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="teacher-swiper">
-                <div v-for="i in store.teachers" :key="i.id">
+                <div v-for="i in store.showTeachers" :key="i.id">
                     <div class="teacher-card" v-if="!i.status">
                         <img class="teacher-img"
                             :src="CONFIG.API_URL + i.image"
@@ -180,7 +180,7 @@
                 </h1>
             </div>
             <div class="circle-wrapper">
-                <div class="circle-card" v-for="i in store.lessons" :key="i.id">
+                <div class="circle-card" v-for="i in store.showLesson" :key="i.id">
                     <img :src="CONFIG.API_URL + i.image"
                         alt="foto">
                     <h3>
@@ -278,7 +278,9 @@ const store = reactive({
     oneNews: false,
     newsData: false,
     teachers: false,
+    showTeachers: [],
     lessons: false,
+    showLesson: [],
     partnerships: false,
     sch: 0,
     length: 0
@@ -330,6 +332,14 @@ const getAllTeachersProduct = () => {
             store.teachers.sort(function (x, y) {
                 return (x.status === y.status) ? 0 : y.status ? -1 : 1;
             });
+            if (store.teachers.length > 7){
+                for (let i = 0; i < 7; i++){
+                    store.showTeachers.push(store.teachers[i])
+                }
+            }
+            else {
+                store.showTeachers = store.teachers
+            }
         })
         .catch((error) => {
             console.log(error);
@@ -343,6 +353,14 @@ const getAllLessonsProduct = () => {
         })
         .then((res) => {
             store.lessons = res.data
+            if (store.lessons.length > 6){
+                for (let i = 0; i < 6; i++){
+                    store.showLesson.push(store.lessons[i])
+                }
+            }
+            else {
+                store.showLesson = store.lessons
+            }
         })
         .catch((error) => {
             console.log(error);
@@ -396,7 +414,7 @@ onMounted(() => {
 .hero {
     position: relative;
     /* margin-top: 140px; */
-    background-image: url("/public/imges/hero-bg.jpg");
+    background-image: url("/imges/hero-bg.jpg");
     /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
