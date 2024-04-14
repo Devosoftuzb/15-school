@@ -53,14 +53,14 @@
                 <div class="teacher2-menu">
                     <div class="menu">
                         <h2>
-                            Popular links
+                            Ommabop havolalar
                         </h2>
                         <div class="menu-line">
 
                         </div>
                         <ul>
                             <li>
-                                Lorem1
+                               lorem1
                             </li>
                             <li>
                                 Lorem1

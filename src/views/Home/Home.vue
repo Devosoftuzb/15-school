@@ -139,7 +139,22 @@
             <swiper class="swiper-preloader-spin" :modules="modules" :slides-per-view="2"
                 :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
                 @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
-                <swiper-slide v-for="i in store.showTeachers" :key="i.id">
+                <swiper-slide  v-for="i in store.showTeachers" :key="i.id">
+                    <div class="teacher-card" v-if="!i.status">
+                        <img class="teacher-img" :src="CONFIG.API_URL + i.image" alt="foto">
+                        <h2 class="teacher-name">
+                            {{ i.full_name }}
+                        </h2>
+                        <h3>
+                            {{ i.profession }}
+                        </h3>
+                    </div>
+                </swiper-slide>
+            </swiper>
+            <swiper class="swiper-preloader-spin-mobilt" :modules="modules" :slides-per-view="1"
+                :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
+                @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
+                <swiper-slide  v-for="i in store.showTeachers" :key="i.id">
                     <div class="teacher-card" v-if="!i.status">
                         <img class="teacher-img" :src="CONFIG.API_URL + i.image" alt="foto">
                         <h2 class="teacher-name">
@@ -159,6 +174,9 @@
                 <h1>
                     Bepul Togaraklar
                 </h1>
+                    <router-link to="/lessons">
+                        Barcha togaraklar
+                    </router-link>
             </div>
             <div class="circle-wrapper">
                 <div class="circle-card" v-for="i in store.showLesson" :key="i.id">
@@ -195,6 +213,84 @@
                     </div>
                 </div>
             </div>
+            <swiper class="swiper-preloader-spin-cricle" :modules="modules" :slides-per-view="2"
+                :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
+                @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
+                <swiper-slide  v-for="i in store.showLesson" :key="i.id">
+                    <div class="circle-card">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
+                    <h3>
+                        {{ i.title }}
+                    </h3>
+                    <div class="cricle-grid">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                        </div>
+                        <span>
+                            {{ i.week_days }}
+                        </span>
+                    </div>
+                </div>
+                </swiper-slide>
+            </swiper>
+            <swiper class="swiper-preloader-spin-cricle-mobile" :modules="modules" :slides-per-view="1"
+                :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
+                @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
+                <swiper-slide  v-for="i in store.showLesson" :key="i.id">
+                    <div class="circle-card">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
+                    <h3>
+                        {{ i.title }}
+                    </h3>
+                    <div class="cricle-grid">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                                <path fill="#ffce31"
+                                    d="M62 25.2H39.1L32 3l-7.1 22.2H2l18.5 13.7l-7 22.1L32 47.3L50.5 61l-7.1-22.2z" />
+                            </svg>
+                        </div>
+                        <span>
+                            {{ i.week_days }}
+                        </span>
+                    </div>
+                </div>
+                </swiper-slide>
+            </swiper>
         </div>
     </section>
     <section class="map">
@@ -237,14 +333,28 @@
         </div>
     </section>
     <section class="unions">
-        <div class="container">
-            <div class="unions-wrapper">
+        <div class="container unions-wrapper">
+            <!-- <div class="unions-wrapper">
                 <div v-for="i in store.partnerships" :key="i.id">
                     <img :src="CONFIG.API_URL + i.image" alt="foto">
                 </div>
-            </div>
+            </div> -->
 
-            <swiper class="swiper-preloader-spin" :modules="modules" :slides-per-view="3"
+            <swiper class="swiper-preloader-spinn" :modules="modules" :slides-per-view="4"
+                :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
+                @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
+                <swiper-slide v-for="i in store.partnerships" :key="i.id">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
+                </swiper-slide>
+            </swiper>
+            <swiper class="swiper-preloader-spin-mobil" :modules="modules" :slides-per-view="2"
+                :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
+                @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
+                <swiper-slide v-for="i in store.partnerships" :key="i.id">
+                    <img :src="CONFIG.API_URL + i.image" alt="foto">
+                </swiper-slide>
+            </swiper>
+            <swiper class="swiper-preloader-spin-smal-mobil" :modules="modules" :slides-per-view="1"
                 :pagination="{ clickable: true }" :scrollbar="{ draggable: true }" @swiper="onSwiper"
                 @slideChange="onSlideChange" :autoplay="{ delay: 3000 }">
                 <swiper-slide v-for="i in store.partnerships" :key="i.id">
@@ -845,7 +955,13 @@ export default {
     color: white;
 
 }
-
+.swiper-preloader-spin{
+    display: none;
+    margin-top: 50px;
+}
+.swiper-preloader-spin-mobilt{
+    display:none;
+}
 @media(max-width:1500px) {
     .teacher-swiper {
         grid-template-columns: repeat(5, 1fr);
@@ -862,6 +978,7 @@ export default {
     .teacher-swiper {
         grid-template-columns: repeat(3, 1fr);
     }
+
 }
 
 @media(max-width:890px) {
@@ -874,6 +991,15 @@ export default {
 @media(max-width:670px) {
     .teacher-swiper {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .swiper-preloader-spin{
+        display: block;
+    }
+    .teacher-swiper{
+        display: none;
+    }
+    .swiper-preloader-spin h2 {
+        border: none;
     }
 }
 
@@ -888,7 +1014,6 @@ export default {
     .teacher-swiper {
         grid-template-columns: repeat(1, 1fr);
     }
-
     .teacher-foto img {
         width: 100%;
         height: 100%;
@@ -900,6 +1025,12 @@ export default {
 
     .teacher-title h1 {
         font-size: 30px;
+    }
+    .swiper-preloader-spin-mobilt{
+        display:block;
+    }
+    .swiper-preloader-spin{
+        display: none;
     }
 }
 
@@ -924,9 +1055,27 @@ export default {
     padding: 30px 20px;
     /* padding-bottom: 20px; */
     background-color: white;
-    /* width: 500px; */
+    width: 500px;
 }
-
+.circle-title a{
+    padding:10px 15px;
+    background-color:#001457;
+    color:white;
+    border-radius: 30px;
+    border: 1px solid #001457;
+}
+.circle-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.circle-title  a {
+    color:white;
+}
+.circle-title a:hover{
+    background-color: transparent;
+    color: #001457;
+}
 .circle-card img {
     width: 400px;
     height: 300px;
@@ -967,7 +1116,12 @@ export default {
 .circle-card svg {
     cursor: pointer;
 }
-
+.swiper-preloader-spin-cricle-mobile{
+    display:none;
+}
+.swiper-preloader-spin-cricle{
+    display:none;
+}
 @media(max-width:1600px) {
     .circle-card {
         width: 450px;
@@ -997,6 +1151,7 @@ export default {
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
         justify-content: center;
+        display: none;
     }
 
     .circle-card img {
@@ -1006,20 +1161,28 @@ export default {
     .circle-card {
         margin: 0 auto;
     }
+    .swiper-preloader-spin-cricle{
+        display: block;
+    }
 }
 
-@media(max-width:750px) {
-    .circle-wrapper {
-        grid-template-columns: repeat(1, 1fr);
+@media(max-width:780px) {
+    .swiper-preloader-spin-cricle{
+        display: none;
     }
-
+    .swiper-preloader-spin-cricle-mobile{
+        display: block;
+    }
 }
 
 @media(max-width:640px) {
     .circle-wrapper {
         grid-template-columns: repeat(1, 1fr);
     }
-
+    .circle-title{
+        flex-direction: column;
+        gap:30px;
+    }
 }
 
 @media(max-width:560px) {
@@ -1077,7 +1240,7 @@ export default {
 .map-title h2 a {
     font-size: 20px;
     font-weight: 400;
-    color: #95929E;
+    color: white;
     cursor: pointer;
 }
 
@@ -1143,7 +1306,25 @@ export default {
     color: #043B87;
     font-weight: 500;
 }
-
+.map-title a{
+    padding:10px 15px;
+    background-color:#001457;
+    color:white;
+    border-radius: 30px;
+    border: 1px solid #001457;
+}
+.map-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.map-title  a {
+    color:white;
+}
+.map-title a:hover{
+    background-color: transparent;
+    color: #001457;
+}
 .navig {
     text-align: end;
     color: #043B87;
@@ -1205,47 +1386,48 @@ export default {
     background-color: #F9F9F9;
 }
 
-.unions-wrapper img {
+.unions img {
     width: 200px;
     height: 200px;
     cursor: pointer;
     overflow: hidden;
     object-fit: cover;
     object-position: center;
-
+    display: block;
+    margin:0 auto;
 }
 
 .unions-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 100px;
-    overflow: hidden;
-    overflow-x: scroll;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
-
-/* @media(max-width:1050px) {
-    .unions-wrapper {
-        flex-direction: column;
-        gap: 50px;
+.swiper-preloader-spin-mobil{
+    display: none;
+}
+.swiper-preloader-spin-smal-mobil{
+    display: none;
+}
+@media(max-width:1025px) {
+    .swiper-preloader-spin-mobil{
+        display: block;
     }
-
-    .unions img {
-        width: 220px;
-        height: 220px;
+    .swiper-preloader-spinn{
+        display: none;
     }
 }
-
-@media(max-width:500px) {
-    .unions img {
-        width: 220px;
-        height: 220px;
+@media(max-width:480px){
+    .swiper-preloader-spin-mobil{
+        display: none;
     }
-} */
+    .swiper-preloader-spin-smal-mobil{
+        display: block;
+    }
+}
 .hero-wrapper {
     display: flex;
     align-items: center;

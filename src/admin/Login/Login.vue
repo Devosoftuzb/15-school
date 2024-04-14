@@ -2,9 +2,7 @@
     <div class="login">
         <div class="login-wrapper">
             <div class="logo">
-                <h1>
-                    LOGO
-                </h1>
+                <img src="../../../public/imges/header-logo.png" alt="">
             </div>
             <form @submit.prevent="loginAdmin">
                 <label for="email">
@@ -68,7 +66,7 @@ const loginAdmin = () => {
     padding: 20px;
 }
 .login-wrapper{
-    border: 1px solid black;
+    border: 1px solid #001457;
     border-radius: 20px;
     padding: 30px; 
     width: 400px; 
@@ -85,6 +83,10 @@ const loginAdmin = () => {
     text-align: center;
     margin-bottom: 30px;
 }
+.logo img{
+    width: 100%;
+    height: 100%;
+}
 h3{
     font-size: 22px;
     margin-bottom: 8px;
@@ -93,8 +95,8 @@ button{
     width: 100%;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid #624BFF;
-    background-color: #624BFF;
+    border: 1px solid #001457;
+    background-color: #001457;
     color: white;
     font-size: 18px;
     cursor: pointer;
