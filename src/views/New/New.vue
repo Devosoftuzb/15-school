@@ -17,7 +17,7 @@
         <div class="container">
             <div class="main-wrapper">
                 <div class="main-left">
-                    <div class="left-card" v-for="i in store.allProducts" :key="i.id">
+                    <div class="left-card" v-for="i in store.oldAdd" :key="i.id">
                         <img :src="CONFIG.API_URL + i.image" alt="foto">
                         <div class="left-card-content">
                             <h3>
@@ -39,16 +39,6 @@
                                         {{ i.createdAt.slice(0, 10) }}
                                     </span>
                                 </div>
-                                <div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                        viewBox="0 0 24 24">
-                                        <path fill="currentColor"
-                                            d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
-                                    </svg>
-                                    <span>
-                                        126
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -58,11 +48,11 @@
                         So‘nggi yangiliklar
                     </h1>
                     <div class="main-right-grid">
-                        <div class="right-card">
-                            <img src="https://media.huquqiyportal.uz/public/files/1686130895103.jpg" alt="foto">
+                        <div class="right-card" v-for="i in store.newAdd" :key="i.id">
+                            <img :src="CONFIG.API_URL + i.image" alt="foto">
                             <div class="right-card-content">
                                 <h3>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, voluptatem.
+                                    {{ i.body }}
                                 </h3>
                                 <div class="card-icon">
                                     <div>
@@ -74,17 +64,7 @@
                                                 d="M4.5 4c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m7 0c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m4 2H.5C.22 6 0 5.78 0 5.5S.22 5 .5 5h15c.28 0 .5.22.5.5s-.22.5-.5.5" />
                                         </svg>
                                         <span>
-                                            06.10.24
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                            viewBox="0 0 24 24">
-                                            <path fill="currentColor"
-                                                d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5" />
-                                        </svg>
-                                        <span>
-                                            126
+                                            {{ i.createdAt.slice(0, 10) }}
                                         </span>
                                     </div>
                                 </div>
@@ -104,6 +84,8 @@ import CONFIG from "@/stores/config";
 
 const store = reactive({
     allProducts: false,
+    newAdd: false,
+    oldAdd: false,
 });
 
 let hozir = new Date();
@@ -118,9 +100,12 @@ const getAllProduct = () => {
         .then((res) => {
             store.allProducts = res.data
             store.allProducts = store.allProducts.reverse()
-            for (let i in store.allProducts) {
-                console.log(store.allProducts[i].createdAt);
-            }
+
+            store.allProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+            store.newAdd = store.allProducts.slice(0, 5);
+
+            store.oldAdd = store.allProducts.slice(5);
         })
         .catch((error) => {
             console.log(error);
@@ -282,7 +267,8 @@ onMounted(() => {
     .right-card h3 {
         font-size: 80%;
     }
-    .right-card img{
+
+    .right-card img {
         height: 150px;
     }
 }

@@ -434,6 +434,7 @@ export default {
                 })
                 .then((res) => {
                     store.news = res.data
+                    store.news = store.news.reverse()
                     store.length = res.data?.length
                     store.oneNews = store.news[store.sch]
                     store.newsData = store.oneNews.createdAt.slice(0, 10)
@@ -449,6 +450,7 @@ export default {
                 })
                 .then((res) => {
                     store.teachers = res.data
+                    store.teachers = store.teachers.reverse()
                     store.teachers.sort(function (x, y) {
                         return (x.status === y.status) ? 0 : y.status ? -1 : 1;
                     });
@@ -473,6 +475,7 @@ export default {
                 })
                 .then((res) => {
                     store.lessons = res.data
+                    store.lessons = store.lessons.reverse()
                     if (store.lessons.length > 6) {
                         for (let i = 0; i < 6; i++) {
                             store.showLesson.push(store.lessons[i])
@@ -494,6 +497,7 @@ export default {
                 })
                 .then((res) => {
                     store.partnerships = res.data
+                    store.partnerships = store.partnerships.reverse()
                 })
                 .catch((error) => {
                     console.log(error);
