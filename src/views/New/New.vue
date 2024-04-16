@@ -51,9 +51,9 @@
                         <div class="right-card" v-for="i in store.newAdd" :key="i.id">
                             <img :src="CONFIG.API_URL + i.image" alt="foto">
                             <div class="right-card-content">
-                                <h3>
+                                <p>
                                     {{ i.body }}
-                                </h3>
+                                </p>
                                 <div class="card-icon">
                                     <div>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -64,6 +64,7 @@
                                                 d="M4.5 4c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m7 0c-.28 0-.5-.22-.5-.5v-3c0-.28.22-.5.5-.5s.5.22.5.5v3c0 .28-.22.5-.5.5m4 2H.5C.22 6 0 5.78 0 5.5S.22 5 .5 5h15c.28 0 .5.22.5.5s-.22.5-.5.5" />
                                         </svg>
                                         <span>
+                                           
                                             {{ i.createdAt.slice(0, 10) }}
                                         </span>
                                     </div>
@@ -210,9 +211,9 @@ onMounted(() => {
 }
 
 .right-card img {
-    width: 305px;
-    height: 100px;
-    border-radius: 30px;
+    width: 310px;
+    height: 100%;
+    border-radius: 20px;
     overflow: hidden;
     object-fit: cover;
     object-position: center;
@@ -235,8 +236,9 @@ onMounted(() => {
     margin-bottom: 20px;
 }
 
-.right-card h3 {
+.right-card p {
     margin-bottom: 10px;
+    width: 250px;
 }
 
 .left-card p {

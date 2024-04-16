@@ -66,7 +66,7 @@
                 </form>
             </div>
             <div clss="main-map">
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3034.2525171644475!2d68.78089953568241!3d40.491798807474424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b2073345bb68b5%3A0xa4fb6a9dd9056c19!2sGuliston%20shahar!5e0!3m2!1sru!2s!4v1710927314759!5m2!1sru!2s"></iframe>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1517.090381368!2d68.79900356356443!3d40.493385670924624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38b20721fdb13df7%3A0x8a5a8468b3d6235b!2s15-maktab!5e0!3m2!1sru!2s!4v1713258249604!5m2!1sru!2s"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
        </div>
