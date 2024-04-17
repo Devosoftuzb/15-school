@@ -45,6 +45,7 @@
                     </div>
                 </div>
             </div>
+            <span class="devosoft">MADE IN <a href="https://www.instagram.com/devosoft.uz/" target="_blank">DEVOSOFT</a></span>
         </div>
     </footer>
 </template>
@@ -60,6 +61,23 @@ footer{
     padding-top: 50px;
     background-color: #001457;
     padding-bottom: 80px;
+}
+
+.devosoft{
+    text-align: center;
+    width: 100%;
+    color: white;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.devosoft a {
+    color: blue;
+    font-weight: 500;
+    font-size: 19px;
 }
 .footer-wrapper{
    display: grid;
